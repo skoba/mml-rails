@@ -1,3 +1,13 @@
+*~
+*#
+
+\#*
+.\#*
+
+# rcov generated
+coverage
+
+*.lock
 *.rbc
 *.sassc
 .sass-cache

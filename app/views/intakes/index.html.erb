@@ -1,0 +1,31 @@
+<h1>Listing intakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Volume</th>
+      <th>Unit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @intakes.each do |intake| %>
+    <tr>
+      <td><%= intake.type %></td>
+      <td><%= intake.volume %></td>
+      <td><%= intake.unit %></td>
+      <td><%= link_to 'Show', intake %></td>
+      <td><%= link_to 'Edit', edit_intake_path(intake) %></td>
+      <td><%= link_to 'Destroy', intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Intake', new_intake_path %>

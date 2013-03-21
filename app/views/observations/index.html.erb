@@ -1,0 +1,31 @@
+<h1>Listing observations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Value</th>
+      <th>Unit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @observations.each do |observation| %>
+    <tr>
+      <td><%= observation.item %></td>
+      <td><%= observation.value %></td>
+      <td><%= observation.unit %></td>
+      <td><%= link_to 'Show', observation %></td>
+      <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
+      <td><%= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Observation', new_observation_path %>

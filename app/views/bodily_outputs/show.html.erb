@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @bodily_output.type %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @bodily_output.volume %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @bodily_output.unit %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @bodily_output.color %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @bodily_output.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_bodily_output_path(@bodily_output) %> |
+<%= link_to 'Back', bodily_outputs_path %>

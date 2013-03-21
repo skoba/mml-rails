@@ -1,0 +1,37 @@
+<%= form_for(@bodily_output) do |f| %>
+  <% if @bodily_output.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bodily_output.errors.count, "error") %> prohibited this bodily_output from being saved:</h2>
+
+      <ul>
+      <% @bodily_output.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br />
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

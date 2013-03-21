@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @intake.type %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @intake.volume %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @intake.unit %>
+</p>
+
+
+<%= link_to 'Edit', edit_intake_path(@intake) %> |
+<%= link_to 'Back', intakes_path %>

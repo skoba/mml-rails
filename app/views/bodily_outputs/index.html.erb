@@ -1,0 +1,35 @@
+<h1>Listing bodily_outputs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Volume</th>
+      <th>Unit</th>
+      <th>Color</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bodily_outputs.each do |bodily_output| %>
+    <tr>
+      <td><%= bodily_output.type %></td>
+      <td><%= bodily_output.volume %></td>
+      <td><%= bodily_output.unit %></td>
+      <td><%= bodily_output.color %></td>
+      <td><%= bodily_output.status %></td>
+      <td><%= link_to 'Show', bodily_output %></td>
+      <td><%= link_to 'Edit', edit_bodily_output_path(bodily_output) %></td>
+      <td><%= link_to 'Destroy', bodily_output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Bodily output', new_bodily_output_path %>

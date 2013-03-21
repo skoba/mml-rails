@@ -1,0 +1,2 @@
+module BodilyOutputsHelper
+end
