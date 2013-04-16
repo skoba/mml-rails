@@ -52,16 +52,4 @@ ActiveRecord::Schema.define(version: 20130314132013) do
     t.datetime "updated_at"
   end
 
-  create_table "vital_signs", force: true do |t|
-    t.string   "name"
-    t.date     "date"
-    t.integer  "heart_rate"
-    t.integer  "systolic_blood_pressure"
-    t.integer  "diastolic_blood_pressure"
-    t.integer  "weight"
-    t.float    "spo2"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

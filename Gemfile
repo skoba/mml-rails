@@ -47,9 +47,9 @@ group :test, :developlent do
    gem 'rb-kqueue'
   gem 'libnotify'
   gem 'simplecov'
-#  gem 'datababse_cleaner'
-# #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
-#  gem 'fabrication'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+#  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
+  gem 'fabrication'
 #  gem 'forgery'
 end
 
