@@ -36,21 +36,28 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+group :development do
+  gem 'libnotify'
+end
 
-group :test, :developlent do
+group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring'
   gem 'guard-rspec'
+  gem 'cucumber-rails', require: false
+  gem 'guard-cucumber'
   gem 'listen', "0.6.0"
 # # for BSD guys
    gem 'rb-kqueue'
-  gem 'libnotify'
   gem 'simplecov'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
   gem 'fabrication'
-#  gem 'forgery'
+  gem 'capybara'
+  #  gem 'forgery'
+#  gem 'livereload'
+  gem 'guard-livereload'
 end
 
 
