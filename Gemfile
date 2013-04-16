@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.0.0.beta'
 
 gem 'sqlite3'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,6 +39,7 @@ gem 'unicorn'
 # gem 'debugger'
 group :development do
   gem 'libnotify'
+#  gem 'livereload'
 end
 
 group :test do
@@ -57,7 +59,7 @@ group :test do
   gem 'capybara'
   #  gem 'forgery'
 #  gem 'livereload'
-  gem 'guard-livereload'
+#  gem 'guard-livereload'
 end
 
 
