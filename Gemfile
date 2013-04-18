@@ -39,6 +39,9 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'fabrication'
+
 group :development do
   gem 'libnotify'
 #  gem 'livereload'
@@ -57,7 +60,6 @@ group :test do
   gem 'simplecov'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
-  gem 'fabrication'
   gem 'capybara'
   #  gem 'forgery'
 #  gem 'livereload'

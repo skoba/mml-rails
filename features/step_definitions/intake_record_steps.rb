@@ -1,11 +1,11 @@
-Given(/^Daily intake data for person$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^Daily intake data for person:$/) do |table|
+  
 end
 
 When(/^I visit index page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/intakes'
 end
 
 Then(/^I get a view of intakes list$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_selector 'table'
 end

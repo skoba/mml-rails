@@ -1,0 +1,3 @@
+Fabricator(:intake) do
+  
+end
