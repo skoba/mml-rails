@@ -21,11 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
 # To use ActiveModel has_secure_password
@@ -42,28 +39,29 @@ gem 'unicorn'
 
 gem 'fabrication'
 
-group :development do
-  gem 'libnotify'
-#  gem 'livereload'
-end
+# group :development do
+#   gem 'guard-unicorn'
+# #  gem 'livereload'
+# end
 
-group :test do
+group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring'
   gem 'guard-rspec'
   gem 'cucumber-rails', require: false
   gem 'guard-cucumber'
-  gem 'listen', "0.6.0"
+  gem 'listen' #, "0.6.0"
+  gem 'libnotify'
 # # for BSD guys
-   gem 'rb-kqueue'
+#   gem 'rb-kqueue'
   gem 'simplecov'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
   gem 'capybara'
   #  gem 'forgery'
-#  gem 'livereload'
-#  gem 'guard-livereload'
+ gem 'livereload'
+ gem 'guard-livereload'
 end
 
 

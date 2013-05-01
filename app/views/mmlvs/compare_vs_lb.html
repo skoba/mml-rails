@@ -1,0 +1,1001 @@
+<h1>MML Vital signモジュール</h1>
+<table>
+<tr>
+  <th colspan="6">mmlVs</th>
+  <th colspan="6">mmlLb</th>
+</tr>
+<tr>
+  <td></td>
+  <td>Elements</td>
+  <td>Attribute</td>
+  <td>DataTypes</td>
+  <td>Occurrence</td>
+  <td>Table Id</td>
+  <td></td>
+  <td>Elements</td>
+  <td>Attribute</td>
+  <td>DataTypes</td>
+  <td>Occurrence</td>
+  <td>Table Id</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>mmlVs:VitalSignModule</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1</td>
+  <td>mmlLb:TestModule</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1</td>
+  <td>mmlVs:information</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.1</td>
+  <td>mmlLb:information</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:registId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:registId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:observedTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:sampleTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:registTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:registTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:reportTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:reportTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.1.1</td>
+  <td>mmlLb:reportStatus</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:statusCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>mmlLb0001</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:statusCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.1.2</td>
+  <td>mmlLb:set</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:setCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:setCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.1</td>
+  <td>mmlVs:facility</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.1.3</td>
+  <td>mmlLb:facility</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:facilityCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:facilityCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:facilityCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>MML0027</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:facilityCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>MML0027</td>
+</tr>
+<tr>
+  <td>1.1.2</td>
+  <td>mmlVs:department</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.1.4</td>
+  <td>mmlLb:department</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:depCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>MML0028</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:depCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>MML0028</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:depCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:depCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.3</td>
+  <td>mmlVs:ward</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.1.5</td>
+  <td>mmlLb:ward</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:wardCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:wardCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:wardCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:wardCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.1.6</td>
+  <td>mmlLb:client</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:clientCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:clientCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.1.7</td>
+  <td>mmlLb:LaboratoryCenter</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:centerCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:centerCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.4</td>
+  <td>mmlVs:observer</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.1.8</td>
+  <td>mmlLb:technician</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:observerCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:techCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:observerCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:techCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.5</td>
+  <td>mmlVs:repMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>*</td>
+  <td></td>
+  <td>1.1.9</td>
+  <td>mmlLb:repMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:repCodeName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:repCodeName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:repCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:repCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:repCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:repCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.6</td>
+  <td>mmlVs:repMemoF</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.1.10</td>
+  <td>mmlLb:repMemoF</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2</td>
+  <td>mmlVs:vitalSign</td>
+  <td></td>
+  <td></td>
+  <td>+</td>
+  <td></td>
+  <td>1.2</td>
+  <td>mmlLb:laboTest</td>
+  <td></td>
+  <td></td>
+  <td>+</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.2.1</td>
+  <td>mmlLb:specimen</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.2.1.1</td>
+  <td>mmlLb:specimenName</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:spCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:spCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.2.1.2</td>
+  <td>mmlLb:spcMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:smCodeName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:smCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:smCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1.2.1.3</td>
+  <td>mmlLb:spcMemoF</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1</td>
+  <td>mmlVs:item</td>
+  <td></td>
+  <td></td>
+  <td>+</td>
+  <td></td>
+  <td>1.2.2</td>
+  <td>mmlLb:item</td>
+  <td></td>
+  <td></td>
+  <td>+</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.1</td>
+  <td>mmlVs:itemName</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+  <td>1.2.2.1</td>
+  <td>mmlLb:itemName</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:itCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>mmlVs00??</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:itCode</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:itCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:itCodeId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:Acode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>JLAC10</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:Icode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>JLAC10</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:Scode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>JLAC10</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:Mcode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>JLAC10</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:Rcode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>JLAC10</td>
+</tr>
+<tr>
+  <td>1.2.1.2</td>
+  <td>mmlVs:value</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+  <td>1.2.2.2</td>
+  <td>mmlLb:value</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.3</td>
+  <td>mmlVs:numValue</td>
+  <td></td>
+  <td>decimal</td>
+  <td>?</td>
+  <td></td>
+  <td>1.2.2.3</td>
+  <td>mmlLb:numValue</td>
+  <td></td>
+  <td>decimal</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:up</td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:down</td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:normal</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:out</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>mmlLb0002</td>
+</tr>
+<tr>
+  <td>1.2.1.4</td>
+  <td>mmlVs:unit</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.2.2.4</td>
+  <td>mmlLb:unit</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:uCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>mmlVs00??</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:uCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:uCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:uCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.5</td>
+  <td>mmlVs:referenceInfo</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+  <td></td>
+  <td>1.2.2.5</td>
+  <td>mmlLb:referenceInfo</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.5.1</td>
+  <td>mmlCm:extRef</td>
+  <td></td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+  <td>1.2.2.5.1</td>
+  <td>mmlCm:extRef</td>
+  <td></td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.6</td>
+  <td>mmlVs:itemMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>*</td>
+  <td></td>
+  <td>1.2.2.6</td>
+  <td>mmlLb:itemMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:imCodeName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:imCodeName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:imCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:imCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlVs:imCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>mmlLb:imCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2.1.7</td>
+  <td>mmlVs:itemMemoF</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+  <td>1.2.2.7</td>
+  <td>mmlLb:itemMemoF</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+</table>

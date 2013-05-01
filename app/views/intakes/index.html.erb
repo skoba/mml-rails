@@ -1,11 +1,11 @@
-<h1>Listing intakes</h1>
+<h1>経口摂取一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Volume</th>
-      <th>Unit</th>
+      <th>種別</th>
+      <th>量</th>
+      <th>単位</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +18,9 @@
       <td><%= intake.type %></td>
       <td><%= intake.volume %></td>
       <td><%= intake.unit %></td>
-      <td><%= link_to 'Show', intake %></td>
-      <td><%= link_to 'Edit', edit_intake_path(intake) %></td>
-      <td><%= link_to 'Destroy', intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to '閲覧', intake %></td>
+      <td><%= link_to '編集', edit_intake_path(intake) %></td>
+      <td><%= link_to '削除', intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Intake', new_intake_path %>
+<%= link_to '新規入力', new_intake_path %>

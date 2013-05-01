@@ -11,3 +11,5 @@ Feature: Care record related about daily intakes.
   | supper    |     10 | /10  |
     When I visit index page
     Then I get a view of intakes list
+
+
