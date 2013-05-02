@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130314132013) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bodily_outputs", force: true do |t|
     t.string   "type"
     t.float    "volume"

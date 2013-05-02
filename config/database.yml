@@ -18,7 +18,7 @@ test: &test
   password: openehr
 
 production:
-  adapter: pg
+  adapter: postgresql
   encoding: unicode
   database: mml_care_production
   pool: 5
