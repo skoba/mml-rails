@@ -4,12 +4,15 @@
 table {
     width: 1200px;
     border-collapse: collapse;
-    border: solid 2px;
+    border: solid 1px;
+    border-color: black
 }
 th {
-    border: bold 2px;
+    border: solid 1px;
+    border-color: black
 }
 
 td {
-   border: solid 2px;
+   border: solid 1px;
+   border-color: black
 }
