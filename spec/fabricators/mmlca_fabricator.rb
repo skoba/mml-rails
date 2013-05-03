@@ -1,0 +1,2 @@
+Fabricator(:mmlca) do
+end

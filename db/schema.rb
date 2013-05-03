@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130314132013) do
+ActiveRecord::Schema.define(version: 20130503091423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20130314132013) do
     t.string   "type"
     t.float    "volume"
     t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mmlca", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

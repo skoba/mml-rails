@@ -1,0 +1,17 @@
+<%= form_for(@mmlca) do |f| %>
+  <% if @mmlca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mmlca.errors.count, "error") %> prohibited this mmlca from being saved:</h2>
+
+      <ul>
+      <% @mmlca.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="columns">
+    <div id="nav">
+      <ul>
+        <li><%= link_to "概要", mmlca_overview_path %></li>
+        <li><%= link_to "バイタルサインモジュール", mmlvs_specification_path %></li>
+      </ul>  
+    </div>
+    <div id="main">
 
-<%= yield %>
-
+      <%= yield %>
+  
+    </div>
+  </div>
 </body>
 </html>
