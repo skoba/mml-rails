@@ -11,6 +11,8 @@ MmlCare::Application.routes.draw do
 
   get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
 
+  get 'mmlvs/specification' => 'mmlvs#specification'
+  
   resources :mmlvs
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -37,20 +37,20 @@ gem 'unicorn'
 # To use debugger
 # gem 'debugger'
 
-gem 'fabrication'
 
 # group :development do
+#   gem 'guard-livereload'
 #   gem 'guard-unicorn'
-# #  gem 'livereload'
+# # #   gem 'livereload'
 # end
 
-group :development, :test do
+group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring'
   gem 'guard-rspec'
-  gem 'cucumber-rails', require: false
   gem 'guard-cucumber'
+  gem 'cucumber-rails', require: false
   gem 'listen' #, "0.6.0"
   gem 'libnotify'
 # # for BSD guys
@@ -60,8 +60,6 @@ group :development, :test do
 #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
   gem 'capybara'
   #  gem 'forgery'
- gem 'livereload'
- gem 'guard-livereload'
+#  gem 'livereload'
+  gem 'fabrication'
 end
-
-

@@ -1,11 +1,16 @@
-table {
+table.twocolumn {
     width: 1200px;
     border-collapse: collapse;
-    border: solid 2px black;
+    border: solid 1px black;
+}
+table.onecolumn {
+    width: 600px;
+    border-collapse: collapse;
+    border: solid 1px black;
 }
 th {
-    border: solid 3px black;
+    border: solid 2px black;
 }
 td {
-    border: solid 2px black;
+    border: solid 1px black;
 }
