@@ -19,6 +19,8 @@ MmlCare::Application.routes.draw do
   
   resources :mmlvs
 
+  root to: 'mmlca#overview'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
