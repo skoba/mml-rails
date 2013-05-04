@@ -3,7 +3,10 @@ class MmlcaController < ApplicationController
 
   def overview
   end
-  
+
+  def specification
+  end
+ 
   # GET /mmlcas
   # GET /mmlcas.json
   def index

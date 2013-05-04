@@ -1,30 +1,27 @@
 <section>
 <article>
-<h1>バイタルサイン情報モジュール</h1>
+<h1>ケア情報モジュール</h1>
 <h2>目的と対象</h2>
 
-<p>ケアモジュールを作成するにあたって、バイタルサインを記録するモジュール
-は汎用性が高く、診療概念においても独立性が高いため、分離させることとし
-た。</p>
+<p>日々の介護や看護で発生する情報を報告あるいは記録するために使用される。</p>
 
-<p>このモジュールにおいては、体温、脈拍、血圧といった日常診療におけるバイ
-タルサインに加えて、SpO2も含めて記録することができる。</p>
+<p>このモジュールにおいては、バイタルサインモジュールとあわせて、食事摂取量、排泄についての情報を扱っていく。想定されるユースケースは体温表に記載される各種情報である。</p>
 
 <h2>namespace宣言</h2>
 このモジュールのnamespaceは以下のように宣言する。<br/>
 
-<span>xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/vitalsign/1.0"</span>
+<span>xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/care/1.0"</span>
 
 <h2>文書ヘッダー情報 (docInfo) のモジュール個別仕様</h2>
 
 <h3>docInfo</h3>
-<p>属性 contentModuleType に MML0005 テーブル「vitalsign」を入力すること．(MML0005テーブルの拡張が必要)</p>
+<p>属性 contentModuleType に MML0005 テーブル「report」を入力すること．（MML0005テーブルの拡張が必要？)</p>
 
 <h3>title</h3>
 
-<p>バイタルサイン情報モジュールに文書タイトルをつける必然性は見当たらないが，省略不可となっているため，何らかの文書タイトルをつけておかなければならない．想定される運用例として、介護施設や病院においての使用される「体温表」や「バイタルサイン」などのレポートタイトルを使用することが考えられる</p>
+<p>ケア情報モジュールは体温表を主なユースケースと考えているため、「体温表」や「温度板」など、病棟で慣用的に使用されているレポートタイトルを使用することを想定している。</p>
 
-属性の generationPurpose は，MML0007 テーブル「recordVitalSign」 (バイタルサイン記録) と入力すること．(MML0007テーブルに拡張が必要）
+<p>属性の generationPurpose は，MML0007 テーブル「reportCare」 (ケア報告) と入力すること．(MML0007テーブルに拡張が必要）</p>
 
 <h3>confirmDate</h3>
 
@@ -32,15 +29,15 @@
 
 <h3>mmlCi:CreatorInfo</h3>
 
-<p>バイタルサインモジュールにおける文書作成者は、主治医ではなくてバイタルサインを記録した者である。測定者と記録者が異なる場合には、モジュール内のobserverと異なることも想定される。</p>
+<p>ケア情報モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が</p>
 
 <h3>extRefs</h3>
 
-<p>バイタルサインモジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．</p>
+<p>ケア情報モジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．</p>
 
 <h3>content</h3>
 
-一つの content に一つだけバイタルサインモジュールを入れる．
+一つの content に一つだけケア情報モジュールを入れる．
 
 <table class="onecolumn">
 <tr>
@@ -55,43 +52,18 @@
   <td>Table Id</td>
 </tr>
 <tr>
-  <td>1</td>
-  <td>mmlVs:VitalSignModule</td>
+  <td>1 mmlCa:CareModule</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.1</td>
-  <td>mmlVs:information</td>
   <td></td>
   <td></td>
   <td></td>
   <td></td>
 </tr>
 <tr>
+  <td>1.1 mmlCa:information</td>
   <td></td>
   <td></td>
-  <td>mmlVs:recordId</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
   <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:observedTime</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:recordTime</td>
-  <td>dateTime</td>
-  <td>#REQUIRED</td>
   <td></td>
 </tr>
 <tr>
@@ -232,18 +204,50 @@
 </tr>
 <tr>
   <td>1.2</td>
-  <td>mmlVs:vitalSign</td>
+  <td>mmlPi:PatientModule</td>
   <td></td>
   <td></td>
-  <td>+</td>
+  <td></td>
   <td></td>
 </tr>
 <tr>
-  <td>1.2.1</td>
-  <td>mmlVs:item</td>
+  <td>1.2</td>
+  <td></td>
+  <td>mmlVs:vitalSgin</td>
   <td></td>
   <td></td>
-  <td>+</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3</td>
+  <td></td>
+  <td>mmlCa:intake</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4</td>
+  <td></td>
+  <td>mmlCa:bodilyOutput</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.5</td>
+  <td>mmlCa:evaluation</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.6</td>
+  <td>mmlCa:intervention</td>
+  <td></td>
+  <td>String</td>
+  <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>

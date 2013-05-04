@@ -1,6 +1,8 @@
 MmlCare::Application.routes.draw do
   get 'mmlca/overview' => 'mmlca#overview'
   
+  get 'mmlca/specification' => 'mmlca#specification'
+
   resources :mmlca
 
   resources :people
