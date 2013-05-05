@@ -68,7 +68,7 @@
 </tr>
 <tr>
   <td>1.1.1</td>
-  <td>mmlVs:facility</td>
+  <td>mmlCa:facility</td>
   <td></td>
   <td>string</td>
   <td>?</td>
@@ -77,7 +77,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:facilityCode</td>
+  <td>mmlCa:facilityCode</td>
   <td>string</td>
   <td>#REQUIRED</td>
   <td></td>
@@ -85,14 +85,14 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:facilityCodeId</td>
+  <td>mmlCa:facilityCodeId</td>
   <td>string</td>
   <td>#REQUIRED</td>
   <td>MML0027</td>
 </tr>
 <tr>
   <td>1.1.2</td>
-  <td>mmlVs:department</td>
+  <td>mmlCa:department</td>
   <td></td>
   <td>string</td>
   <td>?</td>
@@ -101,7 +101,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:depCode</td>
+  <td>mmlCa:depCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>MML0028</td>
@@ -109,14 +109,14 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:depCodeId</td>
+  <td>mmlCa:depCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
   <td>1.1.3</td>
-  <td>mmlVs:ward</td>
+  <td>mmlCa:ward</td>
   <td></td>
   <td>string</td>
   <td>?</td>
@@ -125,7 +125,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:wardCode</td>
+  <td>mmlCa:wardCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -133,14 +133,14 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:wardCodeId</td>
+  <td>mmlCa:wardCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
   <td>1.1.4</td>
-  <td>mmlVs:observer</td>
+  <td>mmlCa:observer</td>
   <td></td>
   <td>string</td>
   <td>?</td>
@@ -149,7 +149,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:observerCode</td>
+  <td>mmlCa:observerCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -157,14 +157,14 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:observerCodeId</td>
+  <td>mmlCa:observerCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
   <td>1.1.5</td>
-  <td>mmlVs:repMemo</td>
+  <td>mmlCa:repMemo</td>
   <td></td>
   <td>string</td>
   <td>*</td>
@@ -173,7 +173,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:repCodeName</td>
+  <td>mmlCa:repCodeName</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -181,7 +181,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:repCode</td>
+  <td>mmlCa:repCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -189,14 +189,14 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlVs:repCodeId</td>
+  <td>mmlCa:repCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
   <td>1.1.6</td>
-  <td>mmlVs:repMemoF</td>
+  <td>mmlCa:repMemoF</td>
   <td></td>
   <td>string</td>
   <td>?</td>
@@ -211,31 +211,73 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.2</td>
-  <td></td>
-  <td>mmlVs:vitalSgin</td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
   <td>1.3</td>
+  <td>mmlVs:vitalSign</td>
   <td></td>
-  <td>mmlCa:intake</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
+  <td></td>
+  <td>*</td>
   <td></td>
 </tr>
 <tr>
   <td>1.4</td>
+  <td>mmlCa:intake</td>
   <td></td>
-  <td>mmlCa:bodilyOutput</td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.1</td>
+  <td></td>
+  <td>mmlCa:intakeType</td>
+  <td></td>
+  <td>mmlCa000?</td>
+</tr>
+<tr>
+  <td>1.4.2</td>
+  <td></td>
+  <td>mmlCa:intakeVolume</td>
   <td>string</td>
-  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.3</td>
+  <td></td>
+  <td>mmlCa:intakeUnit</td>
+  <td>string</td>
   <td></td>
 </tr>
 <tr>
   <td>1.5</td>
+  <td>mmlCa:bodilyOutput</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.5.1</td>
+  <td></td>
+  <td>mmlCa:outputType</td>
+  <td></td>
+  <td>mmlCa000?</td>
+</tr>
+<tr>
+  <td>1.5.2</td>
+  <td></td>
+  <td>mmlCa:outputVolume</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.5.3</td>
+  <td></td>
+  <td>mmlCa:outputUnit</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.6</td>
   <td>mmlCa:evaluation</td>
   <td></td>
   <td></td>
@@ -243,144 +285,76 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.6</td>
+  <td>1.6.1</td>
+  <td></td>
+  <td>mmlCa:evalMetrics</td>
+  <td>string</td>
+  <td>mmlCa000?</td>
+</tr>
+<tr>
+  <td>1.6.2</td>
+  <td></td>
+  <td>mmlCa:evalResult</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.6.3</td>
+  <td></td>
+  <td>mmlCa:evalCodedResult</td>
+  <td>sring</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.7</td>
   <td>mmlCa:intervention</td>
   <td></td>
+  <td></td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.7.1</td>
+  <td></td>
+  <td>mmlCa:ivName</td>
   <td>String</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
-  <td>1.2.1.1</td>
-  <td>mmlVs:itemName</td>
+  <td>1.7.2</td>
   <td></td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:itCode</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
-  <td>MML00??</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:itCodeId</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.2</td>
-  <td>mmlVs:value</td>
-  <td></td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.3</td>
-  <td>mmlVs:numValue</td>
-  <td></td>
-  <td>decimal</td>
-  <td>?</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.4</td>
-  <td>mmlVs:unit</td>
-  <td></td>
-  <td>string</td>
-  <td>?</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:uCode</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>MML00??</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:uCodeId</td>
-  <td>string</td>
+  <td>mmlCa:ivCode</td>
+  <td>String</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
-  <td>1.2.1.5</td>
-  <td>mmlVs:referenceInfo</td>
+  <td>1.7.3</td>
   <td></td>
-  <td></td>
-  <td>?</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.5.1</td>
-  <td>mmlCm:extRef</td>
-  <td></td>
-  <td></td>
-  <td>*</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.6</td>
-  <td>mmlVs:itemMemo</td>
-  <td></td>
-  <td>string</td>
-  <td>*</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:imCodeName</td>
-  <td>string</td>
+  <td>mmlCa:ivCodingSystem</td>
+  <td>String</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
+  <td>1.7.4</td>
   <td></td>
-  <td></td>
-  <td>mmlVs:imCode</td>
-  <td>string</td>
+  <td>mmlCa:ivResult</td>
+  <td>String</td>
   <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlVs:imCodeId</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2.1.7</td>
-  <td>mmlVs:itemMemoF</td>
-  <td></td>
-  <td>string</td>
-  <td>?</td>
   <td></td>
 </tr>
 </table>
 
 <p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
-<%= link_to "バイタルサイン記録モジュールと検歴モジュールとの比較表", "./compare_vs_lb" %>
 
 <h2>エレメント解説</h2>
-<h3>1.mmlVs:VitalSignModule</h3>
-<p>【内容】バイタルサイン記録モジュール</p>
-<h3>1.1 mmlVs:information</h3>
-<p>【内容】バイタルサインヘッダ情報</p>
+<h3>1.mmlCa:CareModule</h3>
+<p>【内容】ケア情報モジュール</p>
+<h3>1.1 mmlCa:information</h3>
+<p>【内容】ケア情報モジュールヘッダ情報</p>
 <p>属性</p>
 <table class="onecolumn">
 <tr>
