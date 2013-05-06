@@ -1,6 +1,6 @@
 <section>
 <article>
-<h1>ケア情報モジュール</h1>
+<h1>ケア情報モジュール(Draft)</h1>
 <h2>目的と対象</h2>
 
 <p>日々の介護や看護で発生する情報を報告あるいは記録するために使用される。</p>
@@ -15,7 +15,7 @@
 <h2>文書ヘッダー情報 (docInfo) のモジュール個別仕様</h2>
 
 <h3>docInfo</h3>
-<p>属性 contentModuleType に MML0005 テーブル「report」を入力すること．（MML0005テーブルの拡張が必要？)</p>
+<p>属性 contentModuleType に MML0005 テーブル「care」を入力すること．（MML0005テーブルの拡張が必要？)</p>
 
 <h3>title</h3>
 
@@ -44,12 +44,12 @@
   <th colspan="6">mmlVs</th>
 </tr>
 <tr>
-  <td></td>
-  <td>Elements</td>
-  <td>Attribute</td>
-  <td>DataTypes</td>
-  <td>Occurrence</td>
-  <td>Table Id</td>
+  <th></th>
+  <th>Elements</th>
+  <th>Attribute</th>
+  <th>DataTypes</th>
+  <th>Occurrence</th>
+  <th>Table Id</th>
 </tr>
 <tr>
   <td>1 mmlCa:CareModule</td>
@@ -140,30 +140,6 @@
 </tr>
 <tr>
   <td>1.1.4</td>
-  <td>mmlCa:observer</td>
-  <td></td>
-  <td>string</td>
-  <td>?</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlCa:observerCode</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlCa:observerCodeId</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.1.5</td>
   <td>mmlCa:repMemo</td>
   <td></td>
   <td>string</td>
@@ -227,23 +203,30 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.4.1</td>
+  <td></td>
   <td></td>
   <td>mmlCa:intakeType</td>
   <td></td>
   <td>mmlCa000?</td>
 </tr>
 <tr>
-  <td>1.4.2</td>
+  <td></td>
   <td></td>
   <td>mmlCa:intakeVolume</td>
+  <td>decimal</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:intakeUnit</td>
   <td>string</td>
   <td></td>
 </tr>
 <tr>
-  <td>1.4.3</td>
   <td></td>
-  <td>mmlCa:intakeUnit</td>
+  <td></td>
+  <td>mmlCa:intakeMemo</td>
   <td>string</td>
   <td></td>
 </tr>
@@ -256,23 +239,79 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.5.1</td>
   <td></td>
-  <td>mmlCa:outputType</td>
+  <td></td>
+  <td>mmlCa:boType</td>
   <td></td>
   <td>mmlCa000?</td>
 </tr>
 <tr>
-  <td>1.5.2</td>
   <td></td>
-  <td>mmlCa:outputVolume</td>
+  <td></td>
+  <td>mmlCa:boVolume</td>
+  <td>decimal</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:boUnit</td>
   <td>string</td>
   <td></td>
 </tr>
 <tr>
-  <td>1.5.3</td>
   <td></td>
-  <td>mmlCa:outputUnit</td>
+  <td></td>
+  <td>mmlCa:boStatus</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:boColor</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:pathway</td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.5.1</td>
+  <td>mmlCa:boFrequency</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:bofTimes</td>
+  <td>decimal</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:bofPeriodStart</td>
+  <td>dateTime</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:bofPeriodEnd</td>
+  <td>dateTime</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:bofMemo</td>
   <td>string</td>
   <td></td>
 </tr>
@@ -285,24 +324,31 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.6.1</td>
+  <td></td>
   <td></td>
   <td>mmlCa:evalMetrics</td>
   <td>string</td>
   <td>mmlCa000?</td>
 </tr>
 <tr>
-  <td>1.6.2</td>
+  <td></td>
   <td></td>
   <td>mmlCa:evalResult</td>
   <td>string</td>
   <td></td>
 </tr>
 <tr>
-  <td>1.6.3</td>
+  <td>1.6.1</td>  
+  <td>mmlCa:evaluator</td>  
   <td></td>
-  <td>mmlCa:evalCodedResult</td>
-  <td>sring</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlPi:PersonalizedInfo</td>
+  <td></td>
   <td></td>
 </tr>
 <tr>
@@ -314,7 +360,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.7.1</td>
+  <td></td>
   <td></td>
   <td>mmlCa:ivName</td>
   <td>String</td>
@@ -322,27 +368,35 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.7.2</td>
   <td></td>
-  <td>mmlCa:ivCode</td>
-  <td>String</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.7.3</td>
-  <td></td>
-  <td>mmlCa:ivCodingSystem</td>
-  <td>String</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.7.4</td>
   <td></td>
   <td>mmlCa:ivResult</td>
   <td>String</td>
   <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlCa:ivTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.7.1 mmlCa:ivPerformedPerson</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td>mmlPi:PersonalizedInfo</td>
+  <td></td>
+  <td></td>
+  <td></td>
   <td></td>
 </tr>
 </table>
@@ -365,29 +419,29 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:recordId</td>
+  <td>mmlCa:recordId</td>
   <td>string</td>
   <td>#REQUIRED</td>
   <td></td> 	
-  <td>記録ID、一連のバイタルサイン記録に対応するID</td>
+  <td>一連のケア情報についての記録</td>
 </tr>
 <tr>
-  <td>mmlVs:observedTime</td>
+  <td>mmlCa:observedTime</td>
   <td>dateTime</td>
   <td>#IMPLIED</td>
   <td></td>
-  <td>観察した日時</td>
+  <td>ケアについての情報が観察された日時</td>
 </tr>
 <tr>
-  <td>mmlVs:recordTime</td>
+  <td>mmlCa:recordTime</td>
   <td>dateTime</td>
   <td>#REQUIRED</td>
   <td></td>
   <td>記録した日時</td>
 </tr>
 </table>
-<h3>1.1.1 mmlVs:facility</h3>
-<p>【内容】バイタルサインを計測して記録した施設</p>
+<h3>1.1.1 mmlCa:facility</h3>
+<p>【内容】ケアを実施して記録した施設</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -398,14 +452,14 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:facilityCode</td>
+  <td>mmlCa:facilityCode</td>
   <td>string</td>
   <td>#REQUIRED</td>
   <td></td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlVs:facilityCodeId</td>
+  <td>mmlCa:facilityCodeId</td>
   <td>string</td>
   <td>#REQUIRED</td>
   <td>MML0027</td>
@@ -413,8 +467,8 @@
 </tr>
 </table>
 </p>
-<h3>1.1.2 mmlVs:department</h3>
-<p>【内容】バイタルサインを計測し、記録した部署・診療科</p>
+<h3>1.1.2 mmlCa:department</h3>
+<p>【内容】ケアを実施した部署</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -425,14 +479,14 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:depCode</td>
+  <td>mmlCa:depCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>MML0028</td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlVs:depCodeId</td>
+  <td>mmlCa:depCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
@@ -440,8 +494,8 @@
 </tr>
 </table>
 </p>
-<h3>1.1.3 mmlVs:ward</h3>
-<p>【内容】バイタルサインを計測し記録した病棟・場所</p>
+<h3>1.1.3 mmlCa:ward</h3>
+<p>【内容】ケアを実施して記録した病棟・場所</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -452,14 +506,14 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:wardCode</td>
+  <td>mmlCa:wardCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlVs:wardCodeId</td>
+  <td>mmlCa:wardCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
@@ -467,35 +521,8 @@
 </tr>
 </table>
 </p>
-<h3>1.1.4 mmlVs:observer</h3>
-<p>【内容】バイタルサインを計測した人</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlVs:observerCode</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-  <td></td>
-</tr>
-<tr>
-  <td>mmlVs:observerCodeId</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>使用したコード体系を入力</td>
-</tr>
-</table>
-</p>
-<h3>1.1.5 mmlVs:repMemo</h3>
-<p>【内容】バイタルサイン記録コメント</p>
+<h3>1.1.4 mmlCa:repMemo</h3>
+<p>【内容】ケア記録コメント</p>
 <p>【属性】繰り返しあり、コメントがあれば、その数だけ繰り返す
 <table class="onecolumn">
 <tr>
@@ -506,21 +533,21 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:repCodeName</td>
+  <td>mmlCa:repCodeName</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlVs:repCode</td>
+  <td>mmlCa:repCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlVs:repCodeId</td>
+  <td>mmlCa:repCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
@@ -528,16 +555,18 @@
 </tr>
 </table>
 </p>
-<h3>1.1.6 mmlVs:repMemoF</h3>
+<h3>1.1.6 mmlCa:repMemoF</h3>
 <p>【内容】報告フリーコメント</p>
-<h3>1.2 mmlVs:vitalSign</h3>
-<p>【内容】バイタルサイン測定情報</p>
+
+<h3>1.2 mmlPi:PatientModule</h3>
+<p>【内容】患者情報モジュール</p>
+
+<h3>1.3 mmlVs:vitalSign</h3>
+<p>【内容】バイタルサイン情報</p>
 <p>【繰り返し設定】繰り返しあり。原則として測定されたバイタルサインがあればその数だけ繰り返す。</p>
-<h3>1.2.1 mmlVs:item</h3>
-<p>【内容】項目情報</p>
-<p>【繰り返し設定】繰り返しあり。項目が複数あればその数だけ繰り返す。</p>
-<h3>1.2.1.1 mmlVs:itemName</h3>
-<p>【内容】項目名</p>
+
+<h3>1.4 mmlCa:intake</h3>
+<p>【内容】水分や食事などの摂取状況に関する情報</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -548,60 +577,30 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:itCode</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
-  <td>MML00??</td>
-  <td>新規テーブル</td>
-</tr>  
-<tr>
-  <td>mmlVs:itCodeId</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
-  <td></td>
-  <td>MML00??と入力</td>
-</tr>  
-</table>
-</p>
-<h3>1.2.1.2 mmlVs:value</h3>
-<p>【内容】文字列で表記される値</p>
-<h3>1.2.1.3 mmlVs:numValue</h3>
-<p>【内容】数値で表記される値</p>
-<h3>1.2.1.4 mmlVs:unit</h3>
-<p>【内容】単位</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlVs:uCode</td>
+  <td>mmlCa:intakeType</td>
   <td>string</td>
   <td>#IMPLIED</td>
-  <td>MML00??</td>
-  <td></td>
+  <td>mmlCa000?</td>
+  <td>摂取した食べ物・飲み物の種類</td>
 </tr>
 <tr>
-  <td>mmlVs:uCodeId</td>
-  <td>string</td>
+  <td>mmlCa:intakeVolume</td>
+  <td>decimal</td>
   <td>#IMPLIED</td>
   <td></td>
-  <td>MML00??を定義するのであればそれを入力</td>
+  <td>摂取した量</td>
+</tr>
+<tr>
+  <td>mmlCa:intakeUnit</td>
+  <td>string</td>
+  <td>#IMPILED</td>
+  <td></td>
+  <td>摂取した量を表す単位</td>
 </tr>
 </table>
 </p>
-<h3>1.2.1.5 mmlVs:referenceInfo</h3>
-<p>【内容】外部参照情報</p>
-<h3>1.2.1.5.1 mmlCm:extRef</h3>
-<p>【内容】外部参照．図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる．</p>
-<p>【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．</p>
-<h3>1.2.1.6 mmlVs:itemMemo</h3>
-<p>【内容】項目コメント</p>
-<p>【繰り返し設定】繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．</p>
+<h3>1.5 mmlCa:bodilyOutput</h3>
+<p>【内容】体外に排泄されるものについての記録。尿、便以外にも分泌物や体液、胆汁なども対象となる</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -612,28 +611,196 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlVs:imCodeName</td>
+  <td>mmlCa:boType</td>
   <td>string</td>
   <td>#IMPLIED</td>
-  <td></td>
-  <td>項目コメント名称</td>
+  <td>mmlca000?</td>
+  <td>排泄物の種類</td>
 </tr>
 <tr>
-  <td>mmlVs:imCode</td>
-  <td>string</td>
+  <td>mmlCa:boVolume</td>
+  <td>decimal</td>
   <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-  <td></td>
+  <td>mmlCa000?</td>
+  <td>排泄物の量</td>
 </tr>
 <tr>
-  <td>mmlVs:imCodeId</td>
+  <td>mmlCa:boUnit</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
-  <td>用いたテーブル名を入力</td>
+  <td>排泄物の量の単位</td>
+</tr>
+<tr>
+  <td>mmlCa:boStatus</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>排泄物の性状。軟便、下痢、混濁など。大量・中等量、少量など数値化できない量もここに記載する</td>
+</tr>
+<tr>
+  <td>mmlCa:boColor</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>排泄物の色調。黄色、茶褐色など</td>
+</tr>
+<tr>
+  <td>mmlCa:pathway</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>排泄経路、カテーテルやドレナージ、ストマなど</td>
 </tr>
 </table>
-<h3>1.2.1.7 mmlVs:itemMemoF</h3>		 	 	 	
-<p>【内容】項目フリーコメント</p>		 	 	 	
+<h3>1.5.1 mmlCa:boFrequency</h3>
+<p>【内容】一定時間内の排泄回数</p>
+<p>【属性】
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlCa:bofTimes</td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>回数</td>
+</tr>
+<tr>
+  <td>mmlCa:bofPeriodStart</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>観察開始時刻</td>
+</tr>
+<tr>
+  <td>mmlCa:bofPeriodEnd</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>観察終了時刻</td>
+</tr>
+<tr>
+  <td>mmlCa:bofMemo</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>数値化されない頻度表現。頻回、乏尿など</td>
+</tr>
+</table>
+</p>
+<h3>1.6 mmlCa:evaluation</h3>
+<p>【内容】ケアに関する評価、自立度や要介護度</p>
+<p>【属性】
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlCa:evalMetrics</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>mmlCa000?</td>
+  <td>評価の基準、尺度。要介護度、看護度、看護必要度など</td>
+</tr>
+<tr>
+  <td>mmlCa:evalResult</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>評価の結果</td>
+</tr>
+</table>
+</p>
+<h3>1.6.1 mmlCa:evaluator</h3>
+<p>【内容】評価者</p>
+<p>属性
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlPi:PersonalizdInfo</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>個人情報形式を使用する</td>
+</tr>
+</table>
+</p>
+<h3>1.7 mmlCa:intervention</h3>
+<p>【内容】ケアを受けた人に何らかの影響がおよぶ処置や介入</p>
+<p>【属性】
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlCa:ivName</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>行った介入の名称。在宅リハビリ、洗髪、食事介助など</td>
+</tr>
+<tr>
+  <td>mmlCa:ivStatus</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>実施状況。完了、中止、延期など</td>
+</tr>
+<tr>
+  <td>mmlCa:ivResult</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>実施結果</td>
+</tr>
+<tr>
+  <td>mmlCa:ivTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>実施した日時</td>
+</tr>
+</table>
+</p>
+<h3>1.7.1 mmlCa:ivPerformedPerson</h3>
+<p>【内容】介入を実施した人</p>
+<p>【属性】
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlPi:PersonalizedInfo</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>ケアを実施した人</td>
+</tr>
+</table>
+</p>
 </article>
 </section>

@@ -6,7 +6,9 @@ class MmlcaController < ApplicationController
 
   def specification
   end
- 
+
+  def table
+  end
   # GET /mmlcas
   # GET /mmlcas.json
   def index

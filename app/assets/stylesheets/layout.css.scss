@@ -11,4 +11,23 @@
 	}
     }
 }
-    
+table.twocolumn {
+    width: 1200px;
+    border-collapse: collapse;
+    border: solid 1px black;
+}
+table.onecolumn {
+    width: 600px;
+    border-collapse: collapse;
+    border: solid 1px black;
+}
+th {
+    border: solid 2px black;
+}
+td {
+    border: solid 1px black;
+}
+tr.new {
+    color: red;
+    text-decoration: underline;
+}
