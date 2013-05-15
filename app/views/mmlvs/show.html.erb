@@ -26,5 +26,6 @@
 </p>
 </div>
 
-<%= link_to '編集', edit_mmlvs_path(@mmlvs) %> |
+
+<%= link_to 'XML', mmlvs_path(@mmlvs, format: :xml) %>|<%= link_to 'JSON', mmlvs_path(@mmlvs, format: :json) %>
 <%= link_to '戻る', mmlvs_index_path %>

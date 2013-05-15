@@ -25,6 +25,7 @@ xml.levelone(
   'xmlns:mmlSc'=>"http://www.medxml.net/MML/SharedComponent/Security/1.0",
   'xmlns:mmlSg'=>"http://www.medxml.net/MML/ContentModule/Surgery/1.0",
   'xmlns:mmlSm'=>"http://www.medxml.net/MML/ContentModule/Summary/1.0",
+  'xmlns:mmlVs'=>"http://www.medxml.net/MML/ContentModule/VitalSign/1.0",
   'xmlns:xhtml'=>"http://www.w3.org/1999/xhtml") do
   xml.clinical_document_header do
     xml.id('AAN'=>'テスト病院', 'EX' => '12345', 'RT' => '1.2.840.114319.1.5.1.1.1.1.1')
@@ -48,35 +49,73 @@ xml.levelone(
         end
       end
     end
-    xml.mml:toc do
-      xml.tag!('mml:tocItem','http://www.w3.org/1999/xhtml')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Common/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Name/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Facility/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Department/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Address/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Phone/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Security/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/PatientInfo/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/BaseClinic/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/FirstClinic/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/HealthInsurance/1.1')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Lifestyle/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/ProgressCourse/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Surgery/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Summary/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/test/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/report/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Referral/1.0')
-      xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimAmountModule/2.1')
-      xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimModule/2.1')
+    xml.local_header('descriptor'=>"mmlheader", 'render'=>"MML") do
+      xml.mml:MmlHeader do
+        xml.mmlCi:CreatorInfo do
+          xml.mmlPsi:PersonalizedInfo do
+            xml.tag!('mmlCm:Id')
+          end
+
+        end
+          xml.mml:toc do
+            xml.tag!('mml:tocItem','http://www.w3.org/1999/xhtml')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Common/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Name/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Facility/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Department/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Address/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Phone/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Security/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/PatientInfo/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/BaseClinic/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/FirstClinic/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/HealthInsurance/1.1')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Lifestyle/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/ProgressCourse/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Surgery/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Summary/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/test/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/report/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Referral/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/VitalSign/1.0')
+        xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimAmountModule/2.1')
+        xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimModule/2.1')
+
+        end
+      end
     end
   end
-  xml.Mml do
-  
-  
+  xml.body do
+    xml.section do
+      xml.paragraph do
+        xml.content do
+          xml.local_markup('descriptor'=>"", 'render'=>"MML") do
+            xml.tag!('mml:docInfo','contentModuleType="vitalsign"')
+            xml.mml:securityLevel do
+              xml.tag!('mml:accessRight', 'permit="ALL"')
+            end
+          end
+        end
+      end #paragraph
+      xml.paragraph do
+        xml.local_markup('descriptor'=>"", 'render'=>"MML") do
+          xml.mmlVs:VitalSignModule do
+            xml.tag!(%Q{mmlVs:information mmlVs:recordId="#{@mmlvs.id}" mmlVs:recordTime="#{@mmlvs.created_at} "})
+            xml.mmlVs:VitalSign do
+              @mmlvs.vital_signs.each do |vitalsign|
+                xml.mmlVs:item do
+                  xml.tag!('mmlVs:itemName', vitalsign.type)
+                  xml.tag!('mmlVs:numValue', vitalsign.val)
+                  xml.tag!('mmlVs:unit', vitalsign.unit)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
   end
 end
