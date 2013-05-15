@@ -1,6 +1,4 @@
 MmlCare::Application.routes.draw do
-  resources :mmlca
-  resources :mmlvs
 
   get 'mmlca/overview' => 'mmlca#overview'
   get 'mmlca/specification' => 'mmlca#specification'
@@ -8,6 +6,8 @@ MmlCare::Application.routes.draw do
   get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
   get 'mmlvs/specification' => 'mmlvs#specification'
 
+  resources :mmlca
+  resources :mmlvs
 
   resources :people
 
