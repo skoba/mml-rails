@@ -9,28 +9,25 @@ class MmlcaController < ApplicationController
 
   def table
   end
-  # GET /mmlcas
-  # GET /mmlcas.json
+
   def index
-    @mmlcas = Mmlca.all
+    @mmlca = Mmlca.all
   end
 
-  # GET /mmlcas/1
-  # GET /mmlcas/1.json
   def show
   end
 
-  # GET /mmlcas/new
+  # GET /mmlca/new
   def new
     @mmlca = Mmlca.new
   end
 
-  # GET /mmlcas/1/edit
+  # GET /mmlca/1/edit
   def edit
   end
 
-  # POST /mmlcas
-  # POST /mmlcas.json
+  # POST /mmlca
+  # POST /mmlca.json
   def create
     @mmlca = Mmlca.new(mmlca_params)
 
@@ -45,8 +42,8 @@ class MmlcaController < ApplicationController
     end
   end
 
-  # PATCH/PUT /mmlcas/1
-  # PATCH/PUT /mmlcas/1.json
+  # PATCH/PUT /mmlca/1
+  # PATCH/PUT /mmlca/1.json
   def update
     respond_to do |format|
       if @mmlca.update(mmlca_params)
@@ -59,12 +56,12 @@ class MmlcaController < ApplicationController
     end
   end
 
-  # DELETE /mmlcas/1
-  # DELETE /mmlcas/1.json
+  # DELETE /mmlca/1
+  # DELETE /mmlca/1.json
   def destroy
     @mmlca.destroy
     respond_to do |format|
-      format.html { redirect_to mmlcas_url }
+      format.html { redirect_to mmlca_url }
       format.json { head :no_content }
     end
   end

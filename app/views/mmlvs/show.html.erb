@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>収縮期血圧:</strong>
+  <%= @mmlvs.sbp.val %>mmHg
+</p>
+
+<p>
+  <strong>拡張期血圧:</strong>
+  <%= @mmlvs.dbp.val %>
+</p>
+
+<p>
+  <strong>脈拍:</strong>
+  <%= @mmlvs.pulse.val %>
+</p>
+
+<p>
+  <strong>体温:</strong>
+  <%= @mmlvs.bt.val %>
+</p>
+
+
+<%= link_to '編集', edit_mmlvs_path(@mmlvs) %> |
+<%= link_to '戻る', mmlvs_index_path %>

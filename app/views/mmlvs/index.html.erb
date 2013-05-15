@@ -1,25 +1,24 @@
-<h1>MML Vital signモジュール</h1>
+<h1>MML Vital signモジュール（サンプル）</h1>
 <table>
   <thead>
     <tr>
-      <th>種別</th>
-      <th>量</th>
-      <th>単位</th>
+      <th>血圧</th>
+      <th>脈拍</th>
+      <th>体温</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @mmlvs.each do |mmlvs| %>
+  <tbody><% @mmlvss.each do |vs| %>
     <tr>
-      <td><%= mmlvs.type %></td>
-      <td><%= mmlvs.volume %></td>
-      <td><%= mmlvs.unit %></td>
-      <td><%= link_to '閲覧', intake %></td>
-      <td><%= link_to '編集', edit_mmlvs_path(intake) %></td>
-      <td><%= link_to '削除', mmlvs, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= vs.sbp.val %>/<%= vs.dbp.val %> mmHg</td>
+      <td><%= vs.pulse.val %>/min</td>
+      <td><%= vs.bt.val %>℃</td>
+      <td><%= link_to '閲覧', vs %></td>
+      <td><%= link_to '編集', edit_mmlvs_path(vs) %></td>
+      <td><%= link_to '削除', vs, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>

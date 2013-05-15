@@ -18,23 +18,17 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe MmlcasController do
+describe MmlcaController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Mmlca. As you add validations to Mmlca, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) { {  } }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # MmlcasController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all mmlcas as @mmlcas" do
+    it "assigns all mmlca as @mmlca" do
       mmlca = Mmlca.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:mmlcas).should eq([mmlca])
+      assigns(:mmlca).should eq([mmlca])
     end
   end
 
@@ -102,7 +96,7 @@ describe MmlcasController do
     describe "with valid params" do
       it "updates the requested mmlca" do
         mmlca = Mmlca.create! valid_attributes
-        # Assuming there are no other mmlcas in the database, this
+        # Assuming there are no other mmlca in the database, this
         # specifies that the Mmlca created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
@@ -150,10 +144,10 @@ describe MmlcasController do
       }.to change(Mmlca, :count).by(-1)
     end
 
-    it "redirects to the mmlcas list" do
+    it "redirects to the mmlca list" do
       mmlca = Mmlca.create! valid_attributes
       delete :destroy, {:id => mmlca.to_param}, valid_session
-      response.should redirect_to(mmlcas_url)
+      response.should redirect_to(mmlca_url)
     end
   end
 

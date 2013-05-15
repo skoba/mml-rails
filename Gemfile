@@ -44,14 +44,16 @@ gem 'unicorn'
 # # #   gem 'livereload'
 # end
 
-group :test do
+group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spring'
-  gem 'guard-rspec'
+  gem 'guard'#, '1.7.0'
+  gem 'guard-rspec'#, '2.6.0'
   gem 'guard-cucumber'
+  gem 'guard-spring' #, '0.0.2'
   gem 'cucumber-rails', require: false
-  gem 'listen' #, "0.6.0"
+  gem 'listen'
   gem 'libnotify'
 # # for BSD guys
 #   gem 'rb-kqueue'
@@ -61,5 +63,5 @@ group :test do
   gem 'capybara'
   #  gem 'forgery'
 #  gem 'livereload'
-  gem 'fabrication'
+  gem 'factory_girl_rails'
 end

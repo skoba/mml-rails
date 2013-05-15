@@ -1,11 +1,13 @@
 MmlCare::Application.routes.draw do
-  get 'mmlca/overview' => 'mmlca#overview'
-  
-  get 'mmlca/specification' => 'mmlca#specification'
-
-  get 'mmlca/table' => 'mmlca#table'
-
   resources :mmlca
+  resources :mmlvs
+
+  get 'mmlca/overview' => 'mmlca#overview'
+  get 'mmlca/specification' => 'mmlca#specification'
+  get 'mmlca/table' => 'mmlca#table'
+  get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
+  get 'mmlvs/specification' => 'mmlvs#specification'
+
 
   resources :people
 
@@ -17,12 +19,8 @@ MmlCare::Application.routes.draw do
 
   resources :bodily_outputs
 
-  get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
 
-  get 'mmlvs/specification' => 'mmlvs#specification'
   
-  resources :mmlvs
-
   root to: 'mmlca#overview'
 
   # The priority is based upon order of creation: first created -> highest priority.

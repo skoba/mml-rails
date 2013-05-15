@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe MmlcasHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe MmlcaHelper do
+
 end

@@ -1,3 +1,0 @@
-Fabricator(:intake) do
-
-end

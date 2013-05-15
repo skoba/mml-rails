@@ -1,0 +1,33 @@
+<%= form_for(@mmlvs) do |f| %>
+  <% if @mmlvs.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mmlvs.errors.count, "error") %> prohibited this mmlvs from being saved:</h2>
+
+      <ul>
+      <% @mmlvs.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    収縮期血圧<br />
+    <%= f.text_field :sbp %>
+  </div>
+  <div class="field">
+    拡張期血圧<br />
+    <%= f.text_field :dbp %>
+  </div>
+  <div class="field">
+    脈拍<br />
+    <%= f.text_field :pulse %>
+  </div>
+  <div class="field">
+    体温<br />
+    <%= f.text_field :bt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
