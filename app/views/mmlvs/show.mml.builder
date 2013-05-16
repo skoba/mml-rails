@@ -53,17 +53,21 @@ xml.levelone(
       xml.mml:MmlHeader do
         xml.mmlCi:CreatorInfo do
           xml.mmlPsi:PersonalizedInfo do
-            xml.tag!('mmlCm:Id')
+            xml.tag!('mmlCm:Id','111111','mmlCm:tableId' => "JPN432101234567", 'mmlCm:type' =>"facility")
+            xml.mmlPsi:personName do
+              xml.tag!('mmlNm:Name') do
+                xml.tag!('mmlNm:fullName','看護師花子')
+              end
+            end
           end
-
         end
-          xml.mml:toc do
-            xml.tag!('mml:tocItem','http://www.w3.org/1999/xhtml')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Common/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Name/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Facility/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Department/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Address/1.0')
+        xml.mml:toc do
+          xml.tag!('mml:tocItem','http://www.w3.org/1999/xhtml')
+          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Common/1.0')
+          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Name/1.0')
+          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Facility/1.0')
+          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Department/1.0')
+          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Address/1.0')
         xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Phone/1.0')
         xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0')
         xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0')
@@ -107,7 +111,7 @@ xml.levelone(
             xml.mmlVs:VitalSign do
               @mmlvs.vital_signs.each do |vitalsign|
                 xml.mmlVs:item do
-                  xml.tag!('mmlVs:itemName', vitalsign.type)
+                  xml.tag!('mmlVs:itemName ', vitalsign.type)
                   xml.tag!('mmlVs:numValue', vitalsign.val)
                   xml.tag!('mmlVs:unit', vitalsign.unit)
                 end
