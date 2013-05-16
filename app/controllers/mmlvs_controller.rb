@@ -13,6 +13,13 @@ class MmlvsController < ApplicationController
   end
 
   def show
+    @mmlvs = Mmlvs.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json
+      format.xml
+      format.mml
+    end
   end
 
   def edit
