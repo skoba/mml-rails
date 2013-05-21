@@ -9,4 +9,5 @@ database: mml_care_test
 username: postgres
 
 before_script:
-  - psql -c 'create database mml_care_test;' -U postgres
+  - "psql -c 'create database mml_care_test;' -U postgres"
+  - "rake db:migrate"
