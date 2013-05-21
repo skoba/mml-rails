@@ -1,18 +1,8 @@
-#columns {
-    #main {
-	margin-left: 17em;
-	padding: 1em;
-    }
-    #nav {
-	float: left;
-	padding: 1em 2em;
-	ul {
-	    list-style: none;
-	}
-    }
+body {
+    padding-top: 60px;
 }
 table {
-    width: 240px;
+    width: 360px;
     border-collapse: collapse;
     border: solid 1px black;
 }
@@ -35,9 +25,4 @@ td {
 tr.new {
     color: red;
     text-decoration: underline;
-}
-h1 {
-    text-align: left;
-    font-weight: bold;
-    font-size: 18pt;
 }
