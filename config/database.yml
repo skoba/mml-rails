@@ -3,8 +3,7 @@ development:
   encoding: unicode
   database: mml_care_development
   pool: 5
-  username: ang
-  password: openehr
+  username: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -14,16 +13,14 @@ test: &test
   encoding: unicode
   database: mml_care_test
   pool: 5
-  username: ang
-  password: openehr
+  username: postgres
 
 production:
   adapter: postgresql
   encoding: unicode
   database: mml_care_production
   pool: 5
-  username: ang
-  password: openehr
+  username: postgres
 
 cucumber:
   <<: *test
