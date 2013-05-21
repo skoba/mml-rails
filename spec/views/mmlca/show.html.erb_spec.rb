@@ -7,5 +7,7 @@ describe "mmlca/show" do
 
   it "renders attributes in <p>" do
     render
+
+    rendered.should have_selector 'p'
   end
 end

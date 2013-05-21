@@ -8,8 +8,7 @@ describe "mmlca/new" do
   it "renders new mmlca form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", mmlca_path, "post" do
+    assert_select "form[action=?][method=?]", mmlca_index_path, "post" do
     end
   end
 end

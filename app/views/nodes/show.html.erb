@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @node.path %>
+</p>
+
+<p>
+  <strong>Atcode:</strong>
+  <%= @node.atcode %>
+</p>
+
+<p>
+  <strong>Rmclass:</strong>
+  <%= @node.rmclass %>
+</p>
+
+<p>
+  <strong>Txt value:</strong>
+  <%= @node.txt_value %>
+</p>
+
+<p>
+  <strong>Int value:</strong>
+  <%= @node.int_value %>
+</p>
+
+<p>
+  <strong>Flt value:</strong>
+  <%= @node.flt_value %>
+</p>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

@@ -27,5 +27,7 @@ module MmlCare
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :factory_girl
     end
+
+    config.app_generators.stylesheet_engine :less
   end
 end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @archetype.uid %>
+</p>
+
+<p>
+  <strong>Archetypeid:</strong>
+  <%= @archetype.archetypeid %>
+</p>
+
+<%= link_to 'Edit', edit_archetype_path(@archetype) %> |
+<%= link_to 'Back', archetypes_path %>

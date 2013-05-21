@@ -1,5 +1,9 @@
 MmlCare::Application.routes.draw do
 
+  resources :archetypes
+
+  resources :nodes
+
   get 'mmlca/overview' => 'mmlca#overview'
   get 'mmlca/specification' => 'mmlca#specification'
   get 'mmlca/table' => 'mmlca#table'

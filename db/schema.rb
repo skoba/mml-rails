@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130508164211) do
+ActiveRecord::Schema.define(version: 20130521032305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "archetypes", force: true do |t|
+    t.string   "uid"
+    t.string   "archetypeid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bodily_outputs", force: true do |t|
     t.string   "type"
@@ -41,6 +48,17 @@ ActiveRecord::Schema.define(version: 20130508164211) do
   end
 
   create_table "mmlvs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nodes", force: true do |t|
+    t.string   "path"
+    t.string   "atcode"
+    t.string   "rmclass"
+    t.string   "txt_value"
+    t.integer  "int_value"
+    t.float    "flt_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

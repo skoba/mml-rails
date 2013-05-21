@@ -1,0 +1,25 @@
+<%= form_for(@archetype) do |f| %>
+  <% if @archetype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@archetype.errors.count, "error") %> prohibited this archetype from being saved:</h2>
+
+      <ul>
+      <% @archetype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br>
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :archetypeid %><br>
+    <%= f.text_field :archetypeid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

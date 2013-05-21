@@ -2,7 +2,7 @@ class MmlvsController < ApplicationController
   before_action :set_mmlvs, only: [:show, :edit, :update, :destroy]
 
   def index
-    @mmlvss = Mmlvs.all
+    @mmlvs = Mmlvs.all
   end
 
   def compare_vs_lb

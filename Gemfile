@@ -13,16 +13,17 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta'
   gem 'coffee-rails', '~> 4.0.0.beta'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-
+  gem 'therubyracer', platforms: :ruby
+  gem 'twitter-bootstrap-rails'
+  gem 'less'
+  gem 'less-rails'
+  gem 'formtastic'
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
 gem 'turbolinks'
-
 gem 'jbuilder', '~> 1.0.1'
 
 # To use ActiveModel has_secure_password

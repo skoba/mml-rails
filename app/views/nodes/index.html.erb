@@ -1,0 +1,37 @@
+<h1>Listing nodes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Atcode</th>
+      <th>Rmclass</th>
+      <th>Txt value</th>
+      <th>Int value</th>
+      <th>Flt value</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nodes.each do |node| %>
+      <tr>
+        <td><%= node.path %></td>
+        <td><%= node.atcode %></td>
+        <td><%= node.rmclass %></td>
+        <td><%= node.txt_value %></td>
+        <td><%= node.int_value %></td>
+        <td><%= node.flt_value %></td>
+        <td><%= link_to 'Show', node %></td>
+        <td><%= link_to 'Edit', edit_node_path(node) %></td>
+        <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Node', new_node_path %>

@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,6 +14,7 @@
   <tbody>
     <% @mmlca.each do |mmlca| %>
       <tr>
+        <td><%= mmlca.id %><td>
         <td><%= link_to 'Show', mmlca %></td>
         <td><%= link_to 'Edit', edit_mmlca_path(mmlca) %></td>
         <td><%= link_to 'Destroy', mmlca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
