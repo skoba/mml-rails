@@ -1,6 +1,6 @@
 Given(/^Daily intake data for person:$/) do |intakes|
   intakes.hashes.each do |intake|
-    Fabricate(:intake, intake)
+    FactoryGirl.create(:intake, intake)
   end
 end
 

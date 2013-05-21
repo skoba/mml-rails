@@ -1,4 +1,7 @@
 require 'cucumber/rails'
+require 'factory_girl'
+require 'factory_girl_rails'
+
 Capybara.default_selector = :css
 
 ActionController::Base.allow_rescue = false
