@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130521032305) do
+ActiveRecord::Schema.define(version: 20130522143628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20130521032305) do
     t.float    "flt_value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "archetype_id"
   end
 
   create_table "observations", force: true do |t|
