@@ -1,5 +1,4 @@
 xml.instruct!
-xml.declare! 'DOCTYPE levelone SYSTEM "MML_4.0_levelone_1.0.dtd"'
 xml.levelone(
   'xmlns:claim' => "http://www.medxml.net/claim/claimModule/2.1",
   'xmlns:claimA' => "http://www.medxml.net/claim/claimAmountModule/2.1",

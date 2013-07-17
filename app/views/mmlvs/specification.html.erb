@@ -25,7 +25,7 @@
 <p>バイタルサイン情報モジュールに文書タイトルをつける必然性は見当たらないが，省略不可となっているため，何らかの文書タイトルをつけておかなければならない．想定される運用例として、介護施設や病院においての使用される「体温表」や「バイタルサイン」などのレポートタイトルを使用することが考えられる</p>
 
 属性の generationPurpose は，MML0007 テーブル「recordVitalSign」 (バイタルサイン記録) と入力すること．(MML0007テーブルに拡張が必要）
-
+v
 <h3>confirmDate</h3>
 
 モジュール生成日であり，モジュール内の報告日時と一致させる．
@@ -366,6 +366,38 @@
   <td>?</td>
   <td></td>
 </tr>
+<tr>
+  <td>1.3</td>
+  <td>mmlVs:protocol</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.1</td>
+  <td></td>
+  <td>mmlVs:procedure</td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.2</td>
+  <td></td>
+  <td>mmlVs:device</td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.3</td>
+  <td></td>
+  <td>mmlVs:bodyLocation</td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
 </table>
 
 <p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
@@ -657,5 +689,39 @@
 </table>
 <h3>1.2.1.7 mmlVs:itemMemoF</h3>		 	 	 	
 <p>【内容】項目フリーコメント</p>		 	 	 	
+<h3>1.3 mmlVs:protocol</h3>
+<p>【内容】バイタルサイン測定方法に関する情報</p>
+<p>【繰り返し設定】繰り返しなし．</p>
+<p>【属性】#IMPLIED
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlVs:procedure</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>測定方法や目的について。負荷テストの種別など．</td>
+</tr>
+<tr>
+  <td>mmlVs:device</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>測定に使用した機器についての情報</td>
+</tr>
+<tr>
+  <td>mmlVs:bodyLocation</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>測定した身体の部位</td>
+</tr>
+</table>
 </article>
 </section>

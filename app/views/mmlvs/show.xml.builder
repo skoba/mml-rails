@@ -1,6 +1,4 @@
 xml.instruct!
-xml.declare! 'DOCTYPE levelone SYSTEM "MML_4.0_levelone_1.0.dtd"'
-
 xml.mml(
         'xmlns:mmlVs'=>"http://www.medxml.net/MML/ContentModule/VitalSign/1.0",
         'xmlns:xhtml'=>"http://www.w3.org/1999/xhtml") do
