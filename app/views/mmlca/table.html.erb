@@ -65,11 +65,11 @@
 </tr>
 <tr class="new">
   <td>vitalsign</td>
-  <td>バイタルサイン情報モジュール</td>
+  <td>バイタルサインモジュール</td>
 </tr>
 <tr class="new">
-  <td>care</td>
-  <td>ケア情報モジュール</td>
+  <td>flowsheet</td>
+  <td>体温表モジュール</td>
 </tr>
 </table>
 <h2>MML0007 Generation purpose (文書詳細種別)</h2>
@@ -175,15 +175,15 @@
   <td>医事情報</td>
 </tr>
 <tr class="new">
-  <td>recordVitalSign</td>
+  <td>VitalSign</td>
   <td>バイタルサイン記録</td>
 </tr>
 <tr class="new">
-  <td>reportCare</td>
-  <td>ケア報告</td>
+  <td>FlowSheet</td>
+  <td>体温表</td>
 </tr>
 </table>
-<h2>mmlVs0001 バイタルサイン項目</h2>
+<h2>mmlVs01 バイタルサイン項目</h2>
 <table class="onecolumn">
 <tr>
   <th>Value</th>
@@ -194,7 +194,7 @@
   <td>脈拍</td>
 </tr>
 <tr>
-  <td>Body Tamperature</td>
+  <td>Body temperature</td>
   <td>体温</td>
 </tr>
 <tr>
@@ -207,10 +207,38 @@
 </tr>
 <tr>
   <td>SpO2</td>
-  <td>経皮的酸素飽和度測定</td>
+  <td>経皮的酸素飽和度</td>
+</tr>
+<tr>
+  <td>EtCO2</td>
+  <td>呼気終末二酸化炭素濃度</td>
+</tr>
+<tr>
+  <td>SaO2</td>
+  <td>動脈血酸素飽和度</td>
+</tr>
+<tr>
+  <td>PaO2</td>
+  <td>動脈血酸素分圧</td>
+</tr>
+<tr>
+  <td>PCO2</td>
+  <td>動脈血二酸化炭素分圧</td>
+</tr>
+<tr>
+  <td>Height</td>
+  <td>身長</td>
+</tr>
+<tr>
+  <td>Weight</td>
+  <td>体重</td>
+</tr>
+<tr>
+  <td>Blood sugar</td>
+  <td>血糖値</td>
 </tr>
 </table>
-<h2>mmlVs0002 バイタルサイン測定単位</h2>
+<h2>mmlVs02 バイタルサイン測定単位</h2>
 <table class="onecolumn">
 <tr>
   <th>Value</th>
@@ -218,7 +246,7 @@
 </tr>
 <tr>
   <td>mmHg</td>
-  <td>水銀柱高度</td>
+  <td>ミリメートル水銀柱高度</td>
 </tr>
 <tr>
   <td>centigrade</td>
@@ -232,6 +260,207 @@
   <td>%</td>
   <td>パーセント</td>
 </tr>
+<tr>
+  <td>cm</td>
+  <td>センチメートル</td>
+</tr>
+<tr>
+  <td>kg</td>
+  <td>キログラム</td>
+</tr>
+<tr>
+  <td>mg/dl</td>
+  <td>1デシリットルあたりのmg重量</td>
+</tr>
+</table>
+<h2>mmlVs03 バイタルサイン体位名称テーブル</h2>
+<table class="onecolumn">
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>sitting</td>
+  <td>坐位</td>
+</tr>
+<tr>
+  <td>standing</td>
+  <td>立位</td>
+</tr>
+<tr>
+  <td>lying</td>
+  <td>臥位</td>
+</tr>
+<tr>
+  <td>reclining</td>
+  <td>半座位</td>
+</tr>
+<tr>
+  <td>tilting</td>
+  <td>ティルティング位</td>
+</tr>
+</table>
+
+
+<h2>mmlFs01 体温表モジュール摂食・飲水種別</h2>
+体温表モジュールに記載する摂食・飲水の種別。食習慣の違いから国際的に統一したテーブルを作ることは困難であるため、日本での事例に合わせて項目を列記する。
+<table class="onecolumn">
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>朝食(主)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>朝食(副)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>昼食(主)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>昼食(副)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>夕食(主)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>夕食(副)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>夜食(主)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>夜食(副)</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>おやつ</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>補食</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>経管栄養剤</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>その他食事</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>水分</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>お茶</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>ジュース</td>
+  <td></td>
+</tr>  
+<tr>
+  <td>その他飲料</td>
+  <td></td>
+</tr>
+</table>
+<h2>mmlFs02 体温表モジュール摂食・飲水単位</h2>
+<table class="onecolumn">
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>/10</td>
+  <td>全量を10として、摂食できた分量</td>
+</tr>  
+<tr>
+  <td>kcal</td>
+  <td>摂取カロリー量</td>
+</tr>  
+<tr>
+  <td>ml</td>
+  <td>摂取容量</td>
+</tr>  
+<tr>
+  <td>g</td>
+  <td>摂取した重量</td>
+</tr>  
+<tr>
+  <td>kg</td>
+  <td>摂取した重量</td>
+</tr>  
+</table>
+<h2>mmlFs03 体温表モジュール排泄種別</h2>
+<table class="onecolumn">
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>urine</td>
+  <td>尿</td>
+</tr>
+<tr>
+  <td>feces</td>
+  <td>便</td>
+</tr>
+<tr>
+  <td>blood</td>
+  <td>血液</td>
+</tr>
+<tr>
+  <td>bile</td>
+  <td>胆汁</td>
+</tr>
+  <td>pleural effusion</td>
+  <td>胸水</td>
+</tr>
+</tr>
+  <td>ascites</td>
+  <td>腹水</td>
+</tr>
+</tr>
+  <td>other fluid</td>
+  <td>その他の体液</td>
+</tr>
+</table>
+<h2>mmlFs04 体温表モジュール摂食・飲水単位</h2>
+<table class="onecolumn">
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>/10</td>
+  <td>全量を10として、摂食できた分量</td>
+</tr>  
+<tr>
+  <td>kcal</td>
+  <td>摂取カロリー量</td>
+</tr>  
+<tr>
+  <td>ml</td>
+  <td>摂取容量</td>
+</tr>  
+<tr>
+  <td>g</td>
+  <td>摂取した重量</td>
+</tr>  
+<tr>
+  <td>kg</td>
+  <td>摂取した重量</td>
+</tr>  
 </table>
 </article>
 </section>

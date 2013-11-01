@@ -60,7 +60,7 @@ group :test, :development do
 # # for BSD guys
 #   gem 'rb-kqueue'
   gem 'simplecov'
-  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'database_cleaner' #, github: 'bmabey/database_cleaner'
 #  gem 'rails3-generators' #mainly for factory_girl & simple_form at this point
   gem 'capybara'
   #  gem 'forgery'

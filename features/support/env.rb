@@ -1,10 +1,10 @@
-require 'cucumber/rails'
+#require 'cucumber/rails'
 require 'factory_girl'
 require 'factory_girl_rails'
 
 Capybara.default_selector = :css
 
-ActionController::Base.allow_rescue = false
+#ActionController::Base.allow_rescue = false
 
 begin
   DatabaseCleaner.strategy = :transaction

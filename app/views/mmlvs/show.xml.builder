@@ -1,7 +1,7 @@
 xml.instruct!
-xml.mml(
-        'xmlns:mmlVs'=>"http://www.medxml.net/MML/ContentModule/VitalSign/1.0",
-        'xmlns:xhtml'=>"http://www.w3.org/1999/xhtml") do
+xml.mml('xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
+        'xmlns:xsd' =>"http://www.w3.org/2001/XMLSchema",
+        'xmlns' => "http://www.medxml.org/v4") do
   xml.mmlVs:VitalSignModule do
     xml.tag!(%Q{mmlVs:information mmlVs:recordId="#{@mmlvs.id}" mmlVs:recordTime="#{@mmlvs.created_at} "})
     xml.mmlVs:VitalSign do
