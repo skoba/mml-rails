@@ -15,13 +15,13 @@
 <h2>文書ヘッダー情報 (docInfo) のモジュール個別仕様</h2>
 
 <h3>docInfo</h3>
-<p>属性 contentModuleType に MML0005 テーブル「flowsheet」を入力すること．</p>
+<p>属性 contentModuleType に MML0005 テーブルより「flowsheet」を入力すること．</p>
 
 <h3>title</h3>
 
 <p>ケア情報モジュールは体温表を主なユースケースと考えているため、「熱型表」「体温表」や「温度板」など、病棟で慣用的に使用されているレポートタイトルを使用することを想定している。</p>
 
-<p>属性の generationPurpose は，MML0007 テーブル「reportCare」 (ケア報告) と入力すること．(MML0007テーブルに拡張が必要）</p>
+<p>属性の generationPurpose は，MML0007 テーブルより「reportCare」 (ケア報告) と入力すること．</p>
 
 <h3>confirmDate</h3>
 
@@ -82,7 +82,7 @@
   <td></td>
   <td>mmlFs:facilityCode</td>
   <td>string</td>
-  <td>#REQUIRED</td>
+  <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
@@ -90,7 +90,7 @@
   <td></td>
   <td>mmlFs:facilityCodeId</td>
   <td>string</td>
-  <td>#REQUIRED</td>
+  <td>#IMPLIED</td>
   <td>MML0027</td>
 </tr>
 <tr>
@@ -143,7 +143,221 @@
 </tr>
 <tr>
   <td>1.1.4</td>
-  <td>mmlFs:repMemo</td>
+  <td>mmlFs:observer</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlFs:obsCode</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>ユーザ指定</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlFs:obsCodeId</td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.5</td>
+  <td>mmlPi:PatientModule</td>
+  <td></td>
+  <td></td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2</td>
+  <td>mmlVs:vitalSign</td>
+  <td></td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3</td>
+  <td>mmlFs:intake</td>
+  <td></td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.1</td>
+  <td>mmlFs:intakeType</td>
+  <td></td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>mmlFs01</td>
+</tr>
+<tr>
+  <td>1.3.2</td>
+  <td>mmlFs:intakeVolume</td>
+  <td></td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.3</td>
+  <td>mmlFs:intakeUnit</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>mmlFs02</td>
+</tr>
+<tr>
+  <td>1.3.4</td>
+  <td>mmlFs:intakePathway</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.5</td>
+  <td>mmlFs:intakeStartTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.6</td>
+  <td>mmlFs:intakeEndTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.3.7</td>
+  <td>mmlFs:intakeMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4</td>
+  <td>mmlFs:bodilyOutput</td>
+  <td></td>
+  <td></td>
+  <td>*</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.1</td>
+  <td>mmlFs:boType</td>
+  <td></td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td>mmlFs03</td>
+</tr>
+<tr>
+  <td>1.4.2</td>
+  <td>mmlFs:boVolume</td>
+  <td></td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.3</td>
+  <td>mmlFs:boUnit</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td>mmlFs04</td>
+</tr>
+<tr>
+  <td>1.4.4</td>
+  <td>mmlFs:boStatus</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.5</td>
+  <td>mmlFs:boColor</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.6</td>
+  <td>mmlFs:boPathway</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.7</td>
+  <td>mmlFs:boStartTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.8</td>
+  <td>mmlFs:boEndTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.9</td>
+  <td>mmlFs:boFrequency</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+</tr>
+<tr>
+  <td>1.4.9.1</td>
+  <td>mmlFs:bofTimes</td>
+  <td></td>
+  <td>decimal</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.9.2</td>
+  <td></td>
+  <td>mmlFs:bofPeriodStart</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.9.3</td>
+  <td></td>
+  <td>mmlFs:bofPeriodEnd</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.10</td>
+  <td>mmlFs:boMemo</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.5</td>
+  <td>mmlFs:fsMemo</td>
   <td></td>
   <td>string</td>
   <td>*</td>
@@ -152,7 +366,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlFs:repCodeName</td>
+  <td>mmlFs:fsCodeName</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -160,7 +374,7 @@
 <tr>
   <td></td>
   <td></td>
-  <td>mmlFs:repCode</td>
+  <td>mmlFs:fsCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
@@ -174,248 +388,11 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.1.6</td>
-  <td>mmlFs:repMemoF</td>
-  <td></td>
-  <td>string</td>
-  <td>?</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.2</td>
-  <td>mmlPi:PatientModule</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.3</td>
-  <td>mmlVs:vitalSign</td>
-  <td></td>
-  <td></td>
-  <td>*</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.4</td>
-  <td>mmlFs:intake</td>
-  <td></td>
-  <td></td>
-  <td>*</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:intakeType</td>
-  <td></td>
-  <td></td>
-  <td>mmlFs000?</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:intakeVolume</td>
-  <td>decimal</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:intakeUnit</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:intakeMemo</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.5</td>
-  <td>mmlFs:bodilyOutput</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:boType</td>
-  <td></td>
-  <td>mmlFs000?</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:boVolume</td>
-  <td>decimal</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:boUnit</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:boStatus</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:boColor</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:pathway</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.5.1</td>
-  <td>mmlFs:boFrequency</td>
-  <td></td>
-  <td></td>
-  <td>?</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:bofTimes</td>
-  <td>decimal</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:bofPeriodStart</td>
-  <td>dateTime</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:bofPeriodEnd</td>
-  <td>dateTime</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:bofMemo</td>
-  <td>string</td>
-  <td></td>
-</tr>
-<tr>
   <td>1.6</td>
-  <td>mmlFs:evaluation</td>
+  <td>mmlFs:fsMemoF</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:evalMetrics</td>
   <td>string</td>
-  <td></td>
-  <td>mmlFs000?</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:evalResult</td>
-  <td>string</td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.6.1</td>  
-  <td>mmlFs:evaluator</td>  
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlPi:PersonalizedInfo</td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.7</td>
-  <td>mmlFs:intervention</td>
-  <td></td>
-  <td></td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:ivName</td>
-  <td>String</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:ivResult</td>
-  <td>String</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:ivTime</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.7.1 mmlFs:ivPerformedPerson</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>*</td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td>mmlPi:PersonalizedInfo</td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>?</td>
   <td></td>
 </tr>
 </tbody>
