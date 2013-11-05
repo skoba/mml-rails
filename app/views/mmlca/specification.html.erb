@@ -19,9 +19,9 @@
 
 <h3>title</h3>
 
-<p>ケア情報モジュールは体温表を主なユースケースと考えているため、「熱型表」「体温表」や「温度板」など、病棟で慣用的に使用されているレポートタイトルを使用することを想定している。</p>
+<p>このモジュールは病棟あるいは介護施設などで日々記録される体温表を主なユースケースと考えている。したがって、レポートタイトルとしては「体温表」であることを前提とするが、病棟で慣用的に利用される「熱型表」「体温表」や「温度板」なども、タイトルとして使用されることを想定している。</p>
 
-<p>属性の generationPurpose は，MML0007 テーブルより「reportCare」 (ケア報告) と入力すること．</p>
+<p>属性の generationPurpose は，MML0007 テーブルより「flowsheet」 (体温表) と入力すること．</p>
 
 <h3>confirmDate</h3>
 
@@ -29,11 +29,7 @@
 
 <h3>mmlCi:CreatorInfo</h3>
 
-<p>ケア情報モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が</p>
-
-<h3>extRefs</h3>
-
-<p>ケア情報モジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．</p>
+<p>ケア情報モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
 
 <h3>content</h3>
 
@@ -175,7 +171,7 @@
 </tr>
 <tr>
   <td>1.2</td>
-  <td>mmlVs:vitalSign</td>
+  <td>mmlVs:VitalSignModule</td>
   <td></td>
   <td></td>
   <td>*</td>
@@ -322,7 +318,7 @@
   <td>mmlFs:boFrequency</td>
   <td></td>
   <td></td>
-  <td>?</td>
+  <td>*</td>
 </tr>
 <tr>
   <td>1.4.9.1</td>
@@ -334,16 +330,16 @@
 </tr>
 <tr>
   <td>1.4.9.2</td>
-  <td></td>
   <td>mmlFs:bofPeriodStart</td>
+  <td></td>
   <td>dateTime</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
   <td>1.4.9.3</td>
-  <td></td>
   <td>mmlFs:bofPeriodEnd</td>
+  <td></td>
   <td>dateTime</td>
   <td>#IMPLIED</td>
   <td></td>
@@ -363,38 +359,6 @@
   <td>*</td>
   <td></td>
 </tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:fsCodeName</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:fsCode</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>mmlFs:repCodeId</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-</tr>
-<tr>
-  <td>1.6</td>
-  <td>mmlFs:fsMemoF</td>
-  <td></td>
-  <td>string</td>
-  <td>?</td>
-  <td></td>
-</tr>
 </tbody>
 </table>
 
@@ -402,9 +366,9 @@
 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
 
 <h2>エレメント解説</h2>
-<h3>1.mmlFs:CareModule</h3>
-<p>【内容】ケア情報モジュール</p>
-<h3>1.1 mmlFs:information</h3>
+<h3>1.mmlFs:FlowSheetModule</h3>
+<p>【内容】体温表モジュール</p>
+<h3>1.1 mmlFs:context</h3>
 <p>【内容】ケア情報モジュールヘッダ情報</p>
 <p>属性</p>
 <table class="onecolumn">
@@ -420,14 +384,14 @@
   <td>string</td>
   <td>#REQUIRED</td>
   <td></td> 	
-  <td>一連のケア情報についての記録</td>
+  <td>一連の体温表情報についての記録</td>
 </tr>
 <tr>
   <td>mmlFs:observedTime</td>
   <td>dateTime</td>
   <td>#IMPLIED</td>
   <td></td>
-  <td>ケアについての情報が観察された日時</td>
+  <td>体温表に関連する情報が観察された日時</td>
 </tr>
 <tr>
   <td>mmlFs:recordTime</td>
@@ -438,7 +402,7 @@
 </tr>
 </table>
 <h3>1.1.1 mmlFs:facility</h3>
-<p>【内容】ケアを実施して記録した施設</p>
+<p>【内容】体温表を記録した施設</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -465,7 +429,7 @@
 </table>
 </p>
 <h3>1.1.2 mmlFs:department</h3>
-<p>【内容】ケアを実施した部署</p>
+<p>【内容】体温表を記録した部署</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -492,7 +456,7 @@
 </table>
 </p>
 <h3>1.1.3 mmlFs:ward</h3>
-<p>【内容】ケアを実施して記録した病棟・場所</p>
+<p>【内容】体温表を記録した病棟・場所</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -518,9 +482,9 @@
 </tr>
 </table>
 </p>
-<h3>1.1.4 mmlFs:repMemo</h3>
-<p>【内容】ケア記録コメント</p>
-<p>【属性】繰り返しあり、コメントがあれば、その数だけ繰り返す
+<h3>1.1.4 mmlFs:observer</h3>
+<p>【内容】体温表情報の観察者</p>
+<p>【属性】
 <table class="onecolumn">
 <tr>
   <th>属性名</th>
@@ -530,21 +494,14 @@
   <th>説明</th>
 </tr>
 <tr>
-  <td>mmlFs:repCodeName</td>
+  <td>mmlFs:obsCode</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td>ユーザ指定</td>
   <td></td>
 </tr>
 <tr>
-  <td>mmlFs:repCode</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>ユーザ指定</td>
-  <td></td>
-</tr>
-<tr>
-  <td>mmlFs:repCodeId</td>
+  <td>mmlFs:obsCodeId</td>
   <td>string</td>
   <td>#IMPLIED</td>
   <td></td>
@@ -552,252 +509,124 @@
 </tr>
 </table>
 </p>
-<h3>1.1.6 mmlFs:repMemoF</h3>
-<p>【内容】報告フリーコメント</p>
 
-<h3>1.2 mmlPi:PatientModule</h3>
-<p>【内容】患者情報モジュール</p>
+<h3>1.1.5 mmlPi:PatientModule</h3>
+<p>【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。</p
+<p>【省略】不可</p>
 
-<h3>1.3 mmlVs:vitalSign</h3>
+<h3>1.2 mmlVs:VitalSignModule</h3>
 <p>【内容】バイタルサイン情報</p>
-<p>【繰り返し設定】繰り返しあり。原則として測定されたバイタルサインがあればその数だけ繰り返す。</p>
+<p>【繰り返し設定】繰り返しあり。測定された一連のバイタルサインの数だけ繰り返す。(例：ラウンド時に計測された収縮期血圧、拡張期血圧、脈拍、体温、SpO2）</p>
 
-<h3>1.4 mmlFs:intake</h3>
-<p>【内容】水分や食事などの摂取状況に関する情報</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:intakeType</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>mmlFs000?</td>
-  <td>摂取した食べ物・飲み物の種類</td>
-</tr>
-<tr>
-  <td>mmlFs:intakeVolume</td>
-  <td>decimal</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>摂取した量</td>
-</tr>
-<tr>
-  <td>mmlFs:intakeUnit</td>
-  <td>string</td>
-  <td>#IMPILED</td>
-  <td></td>
-  <td>摂取した量を表す単位</td>
-</tr>
-</table>
-</p>
-<h3>1.5 mmlFs:bodilyOutput</h3>
-<p>【内容】体外に排泄されるものについての記録。尿、便以外にも分泌物や体液、胆汁なども対象となる</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:boType</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>mmlFs000?</td>
-  <td>排泄物の種類</td>
-</tr>
-<tr>
-  <td>mmlFs:boVolume</td>
-  <td>decimal</td>
-  <td>#IMPLIED</td>
-  <td>mmlFs000?</td>
-  <td>排泄物の量</td>
-</tr>
-<tr>
-  <td>mmlFs:boUnit</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>排泄物の量の単位</td>
-</tr>
-<tr>
-  <td>mmlFs:boStatus</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>排泄物の性状。軟便、下痢、混濁など。大量・中等量、少量など数値化できない量もここに記載する</td>
-</tr>
-<tr>
-  <td>mmlFs:boColor</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>排泄物の色調。黄色、茶褐色など</td>
-</tr>
-<tr>
-  <td>mmlFs:pathway</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>排泄経路、カテーテルやドレナージ、ストマなど</td>
-</tr>
-</table>
-<h3>1.5.1 mmlFs:boFrequency</h3>
-<p>【内容】一定時間内の排泄回数</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:bofTimes</td>
-  <td>decimal</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>回数</td>
-</tr>
-<tr>
-  <td>mmlFs:bofPeriodStart</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>観察開始時刻</td>
-</tr>
-<tr>
-  <td>mmlFs:bofPeriodEnd</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>観察終了時刻</td>
-</tr>
-<tr>
-  <td>mmlFs:bofMemo</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>数値化されない頻度表現。頻回、乏尿など</td>
-</tr>
-</table>
-</p>
-<h3>1.6 mmlFs:evaluation</h3>
-<p>【内容】ケアに関する評価、自立度や要介護度</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:evalMetrics</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td>mmlFs000?</td>
-  <td>評価の基準、尺度。要介護度、看護度、看護必要度など</td>
-</tr>
-<tr>
-  <td>mmlFs:evalResult</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>評価の結果</td>
-</tr>
-</table>
-</p>
-<h3>1.6.1 mmlFs:evaluator</h3>
-<p>【内容】評価者</p>
-<p>属性
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlPi:PersonalizdInfo</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>個人情報形式を使用する</td>
-</tr>
-</table>
-</p>
-<h3>1.7 mmlFs:intervention</h3>
-<p>【内容】ケアを受けた人に何らかの影響がおよぶ処置や介入</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:ivName</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>行った介入の名称。在宅リハビリ、洗髪、食事介助など</td>
-</tr>
-<tr>
-  <td>mmlFs:ivStatus</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>実施状況。完了、中止、延期など</td>
-</tr>
-<tr>
-  <td>mmlFs:ivResult</td>
-  <td>string</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>実施結果</td>
-</tr>
-<tr>
-  <td>mmlFs:ivTime</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>実施した日時</td>
-</tr>
-</table>
-</p>
-<h3>1.7.1 mmlFs:ivPerformedPerson</h3>
-<p>【内容】介入を実施した人</p>
-<p>【属性】
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlPi:PersonalizedInfo</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>ケアを実施した人</td>
-</tr>
-</table>
-</p>
+<h3>1.3 mmlFs:intake</h3>
+<p>【内容】水分や食事などの摂取状況に関する親エレメント</p>
+<p>【繰り返し設定】0回以上の繰り返しあり。</p>
+
+<h3>1.3.1 mmlFs:intakeType</h3>
+<p>【内容】摂取した食べ物・飲み物の種類。例：朝食(主)、昼食（副）、水分、経管栄養食など。</p>
+<p>【省略】不可。</p>
+<p>【データ型】string</p>
+<p>【使用テーブル】mmlFs01</p>
+
+<h3>1.3.2 mmlFs:intakeVolume</h3>
+<p>【内容】摂取した食べ物・飲み物の量。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】decimal</p>
+
+<h3>1.3.3 mmlFs:intakeUnit</h3>
+<p>【内容】摂取した食べ物・飲み物の単位。/10, ml, g, kcal, など</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+<p>【使用テーブル】mmlFs02</p>
+
+<h3>1.3.4 mmlFs:intakePathway</h3>
+<p>【内容】摂取経路。経口摂取、経管、IVH管理など</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.3.5 mmlFs:intakeStartTime</h3>
+<p>【内容】摂取開始時間。観察を開始した時間を記録する。開始、終了の別なく記録をする場合にはこちらに時間を記入する。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.3.6 mmlFs:intakeEndTime</h3>
+<p>【内容】摂取終了時間。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.3.7 mmlFs:intakeMemo</h3>
+<p>【内容】摂取状況に関するコメント・メモ。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.4 mmlFs:bodilyOutput</h3>
+<p>【内容】体外に排泄されるものについて記録する親エレメント。尿、便以外にも胸水、腹水、体液、胆汁、その他の分泌物なども対処とする。</p>
+<p>【繰り返し設定】0回以上</p>
+
+<h3>1.4.1 mmlFs:boType</h3>
+<p>【内容】排泄物の種類。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+<p>【使用テーブル】mmlFs03</p>
+
+<h3>1.4.2 mmlFs:boVolume</h3>
+<p>【内容】排泄物の量。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】decimal</p>
+
+<h3>1.4.3 mmlFs:boUnit</h3>
+<p>【内容】1.4.2排泄物の量の単位。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+<p>【使用テーブル】mmlFs04</p>
+
+<h3>1.4.4 mmlFs:boStatus</h3>
+<p>【内容】排泄物の性状。軟便、下痢、混濁など。大量・中等量、少量など数値化できないもここに記載する。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.4.5 mmlFs:boColor</h3>
+<p>【内容】排泄物の色調。黄色、茶褐色など。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.4.6 mmlFs:pathway</h3>
+<p>【内容】排泄経路、カテーテルやドレーン、ストマなど</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.4.7 mmlFs:boStartTime</h3>
+<p>【内容】排泄開始時間。観察を開始した時間を記録する。開始、終了の別なく記録をする場合にはこちらに時間を記入する。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.4.8 mmlFs:boEndTime</h3>
+<p>【内容】排泄終了時間。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.4.9 mmlFs:boFrequency</h3>
+<p>【内容】一定時間内の排泄回数を表現する親エレメント。</p>
+<p>【繰り返し】0回以上の繰り返しあり</p>
+
+<h3>1.4.9.1 mmlFs:bofTimes</h3>
+<p>【内容】一定期間内に観察された排泄回数。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】decimal</p>
+
+<h3>1.4.9.2 mmlFs:bofTimes</h3>
+<p>【内容】観察を開始した時間。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.4.9.3 mmlFs:bofMemo</h3>
+<p>【内容】数値化されない頻度表現。頻回、乏尿など。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.1.4 mmlFs:fsMemo</h3>
+<p>【内容】体温表コメント、メモ。その他の体温表に記載する内容。</p>
+<p>【属性】繰り返しあり、コメントがあれば、その数だけ繰り返す</p>
+<p>【データ型】string</p>
 </article>
 </section>
