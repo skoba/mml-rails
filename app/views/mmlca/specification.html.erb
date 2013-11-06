@@ -315,13 +315,21 @@
 </tr>
 <tr>
   <td>1.4.9</td>
+  <td>mmlFs:boMemo</td>
+  <td></td>
+  <td>string</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4.10</td>
   <td>mmlFs:boFrequency</td>
   <td></td>
   <td></td>
   <td>*</td>
 </tr>
 <tr>
-  <td>1.4.9.1</td>
+  <td>1.4.10.1</td>
   <td>mmlFs:bofTimes</td>
   <td></td>
   <td>decimal</td>
@@ -329,7 +337,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.4.9.2</td>
+  <td>1.4.10.2</td>
   <td>mmlFs:bofPeriodStart</td>
   <td></td>
   <td>dateTime</td>
@@ -337,7 +345,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.4.9.3</td>
+  <td>1.4.10.3</td>
   <td>mmlFs:bofPeriodEnd</td>
   <td></td>
   <td>dateTime</td>
@@ -345,10 +353,11 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.4.10</td>
-  <td>mmlFs:boMemo</td>
+  <td>1.4.10.4</td>
+  <td>mmlFs:bofMemo</td>
   <td></td>
   <td>string</td>
+  <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
@@ -605,24 +614,30 @@
 <p>【省略】#IMPLIED</p>
 <p>【データ型】dateTime</p>
 
-<h3>1.4.9 mmlFs:boFrequency</h3>
+<h3>1.4.9 mmlFs:boMemo</h3>
+<p>【内容】排泄物に関するコメント、メモ。便秘3日目、出血は収束傾向など。</p>
+<p>【省略】#IMPLIED</p>
+<p>【データ型】string</p>
+
+<h3>1.4.10 mmlFs:boFrequency</h3>
 <p>【内容】一定時間内の排泄回数を表現する親エレメント。</p>
 <p>【繰り返し】0回以上の繰り返しあり</p>
 
-<h3>1.4.9.1 mmlFs:bofTimes</h3>
+<h3>1.4.10.1 mmlFs:bofTimes</h3>
 <p>【内容】一定期間内に観察された排泄回数。</p>
 <p>【省略】#IMPLIED</p>
 <p>【データ型】decimal</p>
 
-<h3>1.4.9.2 mmlFs:bofTimes</h3>
+<h3>1.4.10.2 mmlFs:bofTimes</h3>
 <p>【内容】観察を開始した時間。</p>
 <p>【省略】#IMPLIED</p>
 <p>【データ型】dateTime</p>
 
-<h3>1.4.9.3 mmlFs:bofMemo</h3>
+<h3>1.4.10.3 mmlFs:bofMemo</h3>
 <p>【内容】数値化されない頻度表現。頻回、乏尿など。</p>
 <p>【省略】#IMPLIED</p>
 <p>【データ型】string</p>
+
 
 <h3>1.5 mmlFs:fsMemo</h3>
 <p>【内容】体温表コメント、メモ。その他の体温表に記載する内容。</p>
