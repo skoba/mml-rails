@@ -52,9 +52,7 @@ group :test, :development do
   gem 'spring'
   gem 'guard'#, '1.7.0'
   gem 'guard-rspec'#, '2.6.0'
-  gem 'guard-cucumber'
   gem 'guard-spring' #, '0.0.2'
-  gem 'cucumber-rails', require: false
   gem 'listen'
   gem 'libnotify'
 # # for BSD guys

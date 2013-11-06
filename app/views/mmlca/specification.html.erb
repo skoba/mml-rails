@@ -62,7 +62,7 @@
   <td>1.1 mmlFs:context</td>
   <td></td>
   <td></td>
-  <td>#REQUIRED</td>
+  <td></td>
   <td></td>
 </tr>
 <tr>
@@ -378,38 +378,8 @@
 <h3>1.mmlFs:FlowSheetModule</h3>
 <p>【内容】体温表モジュール</p>
 <h3>1.1 mmlFs:context</h3>
-<p>【内容】体温表モジュールヘッダ情報</p>
-<p>属性</p>
-<table class="onecolumn">
-<tr>
-  <th>属性名</th>
-  <th>データ型</th>
-  <th>省略</th>
-  <th>使用テーブル</th>
-  <th>説明</th>
-</tr>
-<tr>
-  <td>mmlFs:recordId</td>
-  <td>string</td>
-  <td>#REQUIRED</td>
-  <td></td> 	
-  <td>一連の体温表情報についての記録</td>
-</tr>
-<tr>
-  <td>mmlFs:observedTime</td>
-  <td>dateTime</td>
-  <td>#IMPLIED</td>
-  <td></td>
-  <td>体温表に関連する情報が観察された日時</td>
-</tr>
-<tr>
-  <td>mmlFs:recordTime</td>
-  <td>dateTime</td>
-  <td>#REQUIRED</td>
-  <td></td>
-  <td>記録した日時</td>
-</tr>
-</table>
+<p>【内容】体温表モジュールヘッダ情報を表す親エレメント</p>
+<p>【省略】不可</p>
 <h3>1.1.1 mmlFs:facility</h3>
 <p>【内容】体温表を記録した施設</p>
 <p>【属性】
@@ -539,12 +509,12 @@
 
 <h3>1.3.2 mmlFs:intakeVolume</h3>
 <p>【内容】摂取した食べ物・飲み物の量。</p>
-<p>【省略】#IMPLIED</p>
+<p>【省略】可</p>
 <p>【データ型】decimal</p>
 
 <h3>1.3.3 mmlFs:intakeUnit</h3>
 <p>【内容】摂取した食べ物・飲み物の単位。/10, ml, g, kcal, など</p>
-<p>【省略】#IMPLIED</p>
+<p>【省略】可</p>
 <p>【データ型】string</p>
 <p>【使用テーブル】mmlFs02</p>
 
@@ -574,7 +544,7 @@
 
 <h3>1.4.1 mmlFs:boType</h3>
 <p>【内容】排泄物の種類。</p>
-<p>【省略】#IMPLIED</p>
+<p>【省略】不可</p>
 <p>【データ型】string</p>
 <p>【使用テーブル】mmlFs03</p>
 
