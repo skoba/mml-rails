@@ -47,10 +47,10 @@ class MmlvsController < ApplicationController
 
   def create
     @mmlvs = Mmlvs.create
-    VitalSign.create(type: 'Systolic Blood Pressure', val: mmlvs_params[:sbp], unit: 'mmHg', mmlvs_id: @mmlvs.id)
-    VitalSign.create(type: 'Diastolic Blood Pressure', val: mmlvs_params[:dbp], unit: 'mmHg',mmlvs_id: @mmlvs.id)
-    VitalSign.create(type: 'Pulse Rate', val: mmlvs_params[:pulse], unit: '/min',mmlvs_id: @mmlvs.id)
-    VitalSign.create(type: 'Body Temperature', val: mmlvs_params[:bt], unit: 'centigrade',mmlvs_id: @mmlvs.id)
+    VitalSign.create(type: 'Systolic blood pressure', val: mmlvs_params[:sbp], unit: 'mmHg', mmlvs_id: @mmlvs.id)
+    VitalSign.create(type: 'Diastolic blood pressure', val: mmlvs_params[:dbp], unit: 'mmHg',mmlvs_id: @mmlvs.id)
+    VitalSign.create(type: 'Pulse rate', val: mmlvs_params[:pulse], unit: '/min',mmlvs_id: @mmlvs.id)
+    VitalSign.create(type: 'Body temperature', val: mmlvs_params[:bt], unit: 'centigrade',mmlvs_id: @mmlvs.id)
     respond_to do |format|
       if @mmlvs.save
         format.html { redirect_to @mmlvs, notice: 'MMlvs was successfully created.' }

@@ -1,20 +1,20 @@
 class Mmlvs < ActiveRecord::Base
   has_many :vital_signs
-
+  
   def sbp
-    find_scoped_type('Systolic Blood Pressure')
+    find_scoped_type('Systolic blood pressure')
   end
 
   def dbp
-    find_scoped_type('Diastolic Blood Pressure')
+    find_scoped_type('Diastolic blood pressure')
   end
 
   def pulse
-    find_scoped_type('Pulse Rate')
+    find_scoped_type('Pulse rate')
   end
 
   def bt
-    find_scoped_type('Body Temperature')
+    find_scoped_type('Body temperature')
   end
 
   def save
@@ -25,10 +25,10 @@ class Mmlvs < ActiveRecord::Base
   end
 
   def update(params)
-    VitalSign.create(type: 'Systolic Blood Pressure', val: params[:sbp], unit: 'mmHg', mmlvs_id: self.id)
-    VitalSign.create(type: 'Diastolic Blood Pressure', val: params[:dbp], unit: 'mmHg',mmlvs_id: self.id)
-    VitalSign.create(type: 'Pulse Rate', val: params[:pulse], unit: '/min',mmlvs_id: :id)
-    VitalSign.create(type: 'Body Temperature', val: params[:bt], unit: 'centigrade',mmlvs_id: self.id)
+    VitalSign.create(type: 'Systolic plood pressure', val: params[:sbp], unit: 'mmHg', mmlvs_id: self.id)
+    VitalSign.create(type: 'Diastolic blood pressure', val: params[:dbp], unit: 'mmHg',mmlvs_id: self.id)
+    VitalSign.create(type: 'Pulse rate', val: params[:pulse], unit: '/min',mmlvs_id: :id)
+    VitalSign.create(type: 'Body temperature', val: params[:bt], unit: 'centigrade',mmlvs_id: self.id)
   end
 
   private
