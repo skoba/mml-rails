@@ -1,101 +1,66 @@
 # -*- coding: utf-8 -*-
 xml.instruct!
-xml.mml('xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
-        'xmlns:xsd' =>"http://www.w3.org/2001/XMLSchema",
-        'xmlns' => "http://www.medxml.org/v4") do
-  xml.clinical_document_header do
-    xml.id('AAN'=>'テスト病院', 'EX' => '12345', 'RT' => '1.2.840.114319.1.5.1.1.1.1.1')
-    xml.document_type_cd('DN'=>"MML Document",'S'=>"1.2.840.114319.1.1", 'V'=>"0300")
-    xml.original_dttm('V'=>"")
-    xml.provider do
-      xml.tag!('provider.type_cd V="CON"')
-      xml.person do
-        xml.id 'EX="000123" RT="2.16.840.1.113883.5.200"'
-      end
-      xml.patient do
-        xml.tag!('patient.type_cd V="PAT"')
-        xml.person do
-          xml.id 'EX="12345" RT="1.2.840.114319.1.5.1.1.1.1.1"'
-          xml.person_name do
-            xml.nm do
-              xml.tag('GIV V="太郎"')
-              xml.tag('FAM V="山田"')
-            end
-          end
+xml.mmlVs:VitalSignModule(
+ 'xmlns:mmlNm'=>"http://www.medxml.net/MML/SharedComponent/Name/1.0",
+ 'xmlns:mmlCm'=>"http://www.medxml.net/MML/SharedComponent/Common/1.0",
+ 'xmlns:mmlVs'=>"http://www.medxml.net/MML/vaitalsign/1.0",
+ 'xmlns:mmlPi'=>"http://www.medxml.net/MML/ContentModule/PatientInfo/1.0",
+ 'xmlns:xsd' =>"http://www.w3.org/2001/XMLSchema",
+ 'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
+ 'xsi:schemaLocation'=>"http://www.medxml.net/MML/vaitalsign/1.0") do
+  xml.mmlVs:context(registID: @mmlvs.id.to_s, registTime: @mmlvs.created_at.to_s) do
+    xml.mmlPi:PatientModule do
+      xml.mmlPi:uniqueInfo do
+        xml.mmlPi:masterId do
+          xml.mmlCm:Id('mmlCm:type'=>"facility", 'mmlCm:tableId'=>"MML0024") '12345AA'
         end
       end
-    end
-    xml.local_header('descriptor'=>"mmlheader", 'render'=>"MML") do
-      xml.mml:MmlHeader do
-        xml.mmlCi:CreatorInfo do
-          xml.mmlPsi:PersonalizedInfo do
-            xml.tag!('mmlCm:Id','111111','mmlCm:tableId' => "JPN432101234567", 'mmlCm:type' =>"facility")
-            xml.mmlPsi:personName do
-              xml.tag!('mmlNm:Name') do
-                xml.tag!('mmlNm:fullName','看護師花子')
-              end
-            end
-          end
-        end
-        xml.mml:toc do
-          xml.tag!('mml:tocItem','http://www.w3.org/1999/xhtml')
-          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Common/1.0')
-          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Name/1.0')
-          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Facility/1.0')
-          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Department/1.0')
-          xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Address/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Phone/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/SharedComponent/Security/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/PatientInfo/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/BaseClinic/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/FirstClinic/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/HealthInsurance/1.1')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Lifestyle/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/ProgressCourse/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Surgery/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Summary/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/test/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/report/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/Referral/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/MML/ContentModule/VitalSign/1.0')
-        xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimAmountModule/2.1')
-        xml.tag!('mml:tocItem','http://www.medxml.net/claim/claimModule/2.1')
-
+      xml.mmlPi:personName do
+        xml.mmlNm:Name('mmlNm:repCode'=>"A") do
+          xml.mmlNm:family '京大'
+          xml.mmlNm:given '太郎'
         end
       end
+      xml.mmlPi:birthday '1923-4-5'
+      xml.mmlPi:sex 'M'
     end
   end
-  xml.body do
-    xml.section do
-      xml.paragraph do
-        xml.content do
-          xml.local_markup('descriptor'=>"", 'render'=>"MML") do
-            xml.tag!('mml:docInfo','contentModuleType="vitalsign"')
-            xml.mml:securityLevel do
-              xml.tag!('mml:accessRight', 'permit="ALL"')
-            end
-          end
-        end
-      end #paragraph
-      xml.paragraph do
-        xml.local_markup('descriptor'=>"", 'render'=>"MML") do
-          xml.mmlVs:VitalSignModule do
-            xml.tag!(%Q{mmlVs:information mmlVs:recordId="#{@mmlvs.id}" mmlVs:recordTime="#{@mmlvs.created_at} "})
-            xml.mmlVs:VitalSign do
-              @mmlvs.vital_signs.each do |vitalsign|
-                xml.mmlVs:item do
-                  xml.tag!('mmlVs:itemName ', vitalsign.type)
-                  xml.tag!('mmlVs:numValue', vitalsign.val)
-                  xml.tag!('mmlVs:unit', vitalsign.unit)
-                end
-              end
-            end
-          end
-        end
-      end
+  @mmlvs.vital_sings.each do |vitaisign|
+    xml.mmlVs:item do
+      xml.mmlVs:itemName vitalsign.type
+      xml.mmlvs:numValue vitaisign.val
+      xml.mmlvs:unit vitaisign.unit
     end
   end
 end
+#   xml.body do
+#     xml.section do
+#       xml.paragraph do
+#         xml.content do
+#           xml.local_markup('descriptor'=>"", 'render'=>"MML") do
+#             xml.tag!('mml:docInfo','contentModuleType="vitalsign"')
+#             xml.mml:securityLevel do
+#               xml.tag!('mml:accessRight', 'permit="ALL"')
+#             end
+#           end
+#         end
+#       end #paragraph
+#       xml.paragraph do
+#         xml.local_markup('descriptor'=>"", 'render'=>"MML") do
+#           xml.mmlVs:VitalSignModule do
+#             xml.tag!(%Q{mmlVs:information mmlVs:recordId="#{@mmlvs.id}" mmlVs:recordTime="#{@mmlvs.created_at} "})
+#             xml.mmlVs:VitalSign do
+#               @mmlvs.vital_signs.each do |vitalsign|
+#                 xml.mmlVs:item do
+#                   xml.tag!('mmlVs:itemName ', vitalsign.type)
+#                   xml.tag!('mmlVs:numValue', vitalsign.val)
+#                   xml.tag!('mmlVs:unit', vitalsign.unit)
+#                 end
+#               end
+#             end
+#           end
+#         end
+#       end
+#     end
+#   end
+# end
