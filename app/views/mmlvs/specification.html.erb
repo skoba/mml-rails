@@ -66,6 +66,27 @@
   <td></td>
 </tr>
 <tr>
+  <td></td>
+  <td>mmlFs:recordId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td>mmlFs:observedTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td>mmlFs:recordTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+</tr>
+<tr>
   <td>1.1.1</td>
   <td>mmlVs:facility</td>
   <td></td>
@@ -286,6 +307,38 @@
 <h3>1.1 mmlVs:context</h3>
 <p>【内容】バイタルサインヘッダ情報。</p>
 <p>【省略】体温表モジュールなど、他のモジュールに組み込んで利用する場合には、重複するようであれば省略可能。</p>
+<p>属性</p>
+<table class="onecolumn">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlFs:recordId</td>
+  <td>string</td>
+  <td>#REQUIRED</td>
+  <td></td>         
+  <td>一連の体温表情報についての記録</td>
+</tr>
+<tr>
+  <td>mmlFs:observedTime</td>
+  <td>dateTime</td>
+  <td>#IMPLIED</td>
+  <td></td>
+  <td>体温表に関連する情報が観察された日時</td>
+</tr>
+<tr>
+  <td>mmlFs:recordTime</td>
+  <td>dateTime</td>
+  <td>#REQUIRED</td>
+  <td></td>
+  <td>記録した日時</td>
+</tr>
+</table>
+</p>
 
 <h3>1.1.1 mmlVs:facility</h3>
 <p>【内容】バイタルサインを計測して記録した施設</p>
