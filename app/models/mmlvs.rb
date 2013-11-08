@@ -29,6 +29,7 @@ class Mmlvs < ActiveRecord::Base
     VitalSign.create(type: 'Diastolic blood pressure', val: params[:dbp], unit: 'mmHg',mmlvs_id: self.id)
     VitalSign.create(type: 'Pulse rate', val: params[:pulse], unit: '/min',mmlvs_id: :id)
     VitalSign.create(type: 'Body temperature', val: params[:bt], unit: 'centigrade',mmlvs_id: self.id)
+    super
   end
 
   private

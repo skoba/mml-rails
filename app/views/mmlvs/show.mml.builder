@@ -34,4 +34,5 @@ xml.mmlVs(:VitalSignModule, {
       xml.mmlVs :unit, vitalsign.unit
     end
   end
+  xml.mmlVs :observedTime, @mmlvs.updated_at
 end

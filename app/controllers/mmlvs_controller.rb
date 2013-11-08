@@ -47,6 +47,7 @@ class MmlvsController < ApplicationController
 
   def create
     @mmlvs = Mmlvs.create
+    @mmlvs.observed_time = mmlvs_params[:observed_time]
     VitalSign.create(type: 'Systolic blood pressure', val: mmlvs_params[:sbp], unit: 'mmHg', mmlvs_id: @mmlvs.id)
     VitalSign.create(type: 'Diastolic blood pressure', val: mmlvs_params[:dbp], unit: 'mmHg',mmlvs_id: @mmlvs.id)
     VitalSign.create(type: 'Pulse rate', val: mmlvs_params[:pulse], unit: '/min',mmlvs_id: @mmlvs.id)
@@ -69,7 +70,7 @@ class MmlvsController < ApplicationController
   end
 
   def mmlvs_params
-    params.require(:mmlvs).permit(:sbp, :dbp, :pulse, :bt)
+    params.require(:mmlvs).permit(:sbp, :dbp, :pulse, :bt, :observed_time)
   end
 end
 

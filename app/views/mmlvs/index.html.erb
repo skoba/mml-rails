@@ -5,6 +5,7 @@
       <th>血圧</th>
       <th>脈拍</th>
       <th>体温</th>
+      <!-- <th>観察した時間</th> -->
       <th></th>
       <th></th>
     </tr>
@@ -15,6 +16,7 @@
       <td><%= vs.sbp.val %>/<%= vs.dbp.val %> mmHg</td>
       <td><%= vs.pulse.val %>/min</td>
       <td><%= vs.bt.val %>℃</td>
+      <!-- <td><%= vs.observed_time %></td> -->
       <td><%= link_to '閲覧', vs %></td>
       <td><%= link_to '削除', vs, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

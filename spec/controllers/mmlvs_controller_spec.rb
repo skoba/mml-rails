@@ -6,7 +6,7 @@ describe MmlvsController do
       @mmlvs = FactoryGirl.create(:mmlvs_with_vital_signs)
     end
 
-    it 'should' do
+    it 'index show mmlvs array' do
       get :index
       assigns(:mmlvs).should eq [@mmlvs]
     end

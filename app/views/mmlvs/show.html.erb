@@ -26,6 +26,12 @@
 </p>
 </div>
 
+<!-- <div itemscope itemtype="http://schema.org/VitalSign"> -->
+<!-- <p> -->
+<!--   <span class="iheader"><span itemprop="name">観察した時間</span>:</span> -->
+<!--   <span itemprop="description"><%= @mmlvs.observed_time %></span> -->
+<!-- </p> -->
+<!-- </div> -->
 
 <%= link_to 'MML', mmlvs_path(@mmlvs, format: :mml) %> | <%= link_to 'JSON', mmlvs_path(@mmlvs, format: :json) %>|
 <%= link_to '戻る', mmlvs_index_path %>
