@@ -9,7 +9,7 @@ MmlCare::Application.routes.draw do
   get 'mmlca/table' => 'mmlca#table'
   get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
   get 'mmlvs/specification' => 'mmlvs#specification'
-
+  get 'mmlca/sample_instance' => 'mmlca#sample_instance'
   resources :mmlca
   resources :mmlvs
 

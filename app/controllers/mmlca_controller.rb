@@ -9,6 +9,9 @@ class MmlcaController < ApplicationController
 
   def table
   end
+  
+  def sample_instance
+  end
 
   def index
     @mmlca = Mmlca.all
