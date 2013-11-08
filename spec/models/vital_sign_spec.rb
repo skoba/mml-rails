@@ -5,6 +5,6 @@ describe VitalSign do
   let(:sbp) {FactoryGirl.create(:vital_sign)}
   
   it 'should generated properly' do
-    expect(vital_sign.type).to match /Systolic Blood Pressure/
+    expect(vital_sign.type).to match /Systolic blood pressure/
   end
 end

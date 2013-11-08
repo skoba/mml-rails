@@ -32,6 +32,7 @@ class Mmlvs < ActiveRecord::Base
   end
 
   private
+
   def find_scoped_type(arg)
     vital_signs.select {|vs| vs.type == arg}.first
   end

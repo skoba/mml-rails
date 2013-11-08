@@ -67,7 +67,6 @@
 </tr>
 <tr>
   <td></td>
-  <td></td>
   <td>mmlFs:recordId</td>
   <td>string</td>
   <td>#REQUIRED</td>
@@ -75,14 +74,12 @@
 </tr>
 <tr>
   <td></td>
-  <td></td>
   <td>mmlFs:observedTime</td>
   <td>dateTime</td>
   <td>#IMPLIED</td>
   <td></td>
 </tr>
 <tr>
-  <td></td>
   <td></td>
   <td>mmlFs:recordTime</td>
   <td>dateTime</td>
@@ -243,6 +240,14 @@
 </tr>
 <tr>
   <td>1.3</td>
+  <td>mmlVs:observedTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.4</td>
   <td>mmlVs:protocol</td>
   <td></td>
   <td></td>
@@ -250,7 +255,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.3.1</td>
+  <td>1.4.1</td>
   <td>mmlVs:procedure</td>
   <td></td>
   <td>string</td>
@@ -258,7 +263,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.3.2</td>
+  <td>1.4.2</td>
   <td>mmlVs:device</td>
   <td></td>
   <td>string</td>
@@ -266,7 +271,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.3.3</td>
+  <td>1.4.3</td>
   <td>mmlVs:position</td>
   <td></td>
   <td>string</td>
@@ -274,7 +279,7 @@
   <td>mmlVs03</td>
 </tr>
 <tr>
-  <td>1.3.4</td>
+  <td>1.4.4</td>
   <td>mmlVs:bodyLocation</td>
   <td></td>
   <td>string</td>
@@ -282,7 +287,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.3.5</td>
+  <td>1.4.5</td>
   <td>mmlVs:protMemo</td>
   <td></td>
   <td>string</td>
@@ -290,7 +295,7 @@
   <td></td>
 </tr>
 <tr>
-  <td>1.4</td>
+  <td>1.5</td>
   <td>mmlVs:vsMemo</td>
   <td></td>
   <td>string</td>
@@ -323,7 +328,7 @@
   <td>mmlFs:recordId</td>
   <td>string</td>
   <td>#REQUIRED</td>
-  <td></td>         
+  <td></td>
   <td>一連の体温表情報についての記録</td>
 </tr>
 <tr>
@@ -456,7 +461,6 @@
 <p>【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。</p
 <p>【省略】不可</p>
 
-
 <h3>1.2. mmlVs:item</h3>
 <p>【内容】項目情報</p>
 <p>【繰り返し設定】1回以上の繰り返しあり。項目が複数あればその数だけ繰り返す。</p>
@@ -488,37 +492,42 @@
 <p>【データ型】string</p>
 <p>【繰り返し設定】繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．</p>
 
-<h3>1.3 mmlVs:protocol</h3>
+<h3>1.3 mmlVs:observedTime</h3>
+<p>【内容】バイタルサインを観察した時間</p>
+<p>【データ型】dateTime</p>
+<p>【省略】不可</p>
+
+<h3>1.4 mmlVs:protocol</h3>
 <p>【内容】バイタルサインの測定方法を記載する親エレメント</p>
 <p>【繰り返し設定】繰り返しなし．省略可能</p>
 
-<h3>1.3.1 mmlVs:procedure</h3>
+<h3>1.4.1 mmlVs:procedure</h3>
 <p>【内容】バイタルサインを測定した手順。測定方法や、負荷テストの種別など</p>
 <p>【データ型】string</p>
 <p>【省略】省略可能</p>
 
-<h3>1.3.2 mmlVs:device</h3>
+<h3>1.4.2 mmlVs:device</h3>
 <p>【内容】バイタルサインの測定に使用した機材、デバイス。聴診器、水銀柱血圧計、機械式血圧計、動脈内プローベなど。</p>
 <p>【データ型】string</p>
 <p>【省略】省略可能</p>
 
-<h3>1.3.2 mmlVs:bodyLocation</h3>
+<h3>1.4.2 mmlVs:bodyLocation</h3>
 <p>【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。</p>
 <p>【省略】string</p>
 <p>【省略】省略可能</p>
 
-<h3>1.3.3 mmlVs:position</h3>
+<h3>1.4.3 mmlVs:position</h3>
 <p>【内容】バイタルサインを測定した時の体位。</p>
 <p>【データ型】string</p>
 <p>【省略】省略可能</p>
 <p>【使用テーブル】mmlVs03</p>
 
-<h3>1.3.5 mmlVs:protMemo</h3>
+<h3>1.4.5 mmlVs:protMemo</h3>
 <p>【内容】バイタルサイン測定方法に関するコメント</p>
 <p>【データ型】string</p>
 <p>【省略】省略可能</p>
 
-<h3>1.4 mmlVs:vsMemo</h3>
+<h3>1.5 mmlVs:vsMemo</h3>
 <p>【内容】バイタルサイン記録コメント</p>
 <p>【データ型】string</p>
 <p>【省略】省略可能</p>

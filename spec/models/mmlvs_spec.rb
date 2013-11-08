@@ -10,4 +10,8 @@ describe Mmlvs do
   it 'sbp shows associated sbp record if exist' do
     expect(mmlvs.sbp.unit).to eq 'mmHg'
   end
+
+  it 'observed date should be 2013-11-07T09:45:00' do
+    expect(mmlvs.observed_time.to_s).to eq '2013-11-07 09:45:00 UTC'
+  end
 end
