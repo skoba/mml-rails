@@ -95,7 +95,7 @@
   <td>mmlFs:facility</td>
   <td></td>
   <td>string</td>
-  <td>?</td>
+  <td></td>
   <td></td>
 </tr>
 <tr>
@@ -103,7 +103,7 @@
   <td></td>
   <td>mmlFs:facilityCode</td>
   <td>string</td>
-  <td>#IMPLIED</td>
+  <td>#REQUIRED</td>
   <td></td>
 </tr>
 <tr>
@@ -111,7 +111,7 @@
   <td></td>
   <td>mmlFs:facilityCodeId</td>
   <td>string</td>
-  <td>#IMPLIED</td>
+  <td>#REQUIRED</td>
   <td>MML0027</td>
 </tr>
 <tr>
@@ -207,7 +207,7 @@
   <td>mmlFs:intake</td>
   <td></td>
   <td></td>
-  <td>?</td>
+  <td>*</td>
   <td></td>
 </tr>
 <tr>
@@ -439,6 +439,7 @@
 </p>
 <h3>1.1.1 mmlFs:facility</h3>
 <p>【内容】体温表を記録した施設</p>
+<p>【省略】不可</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -466,6 +467,7 @@
 </p>
 <h3>1.1.2 mmlFs:department</h3>
 <p>【内容】体温表を記録した部署</p>
+<p>【省略】可</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -520,6 +522,7 @@
 </p>
 <h3>1.1.4 mmlFs:observer</h3>
 <p>【内容】体温表情報の観察者</p>
+<p>【省略】可</p>
 <p>【属性】
 <table class="onecolumn">
 <tr>
@@ -655,12 +658,17 @@
 <p>【省略】省略可</p>
 <p>【データ型】decimal</p>
 
-<h3>1.4.10.2 mmlFs:bofTimes</h3>
+<h3>1.4.10.2 mmlFs:bofStart</h3>
 <p>【内容】観察を開始した時間。</p>
 <p>【省略】省略可</p>
 <p>【データ型】dateTime</p>
 
-<h3>1.4.10.3 mmlFs:bofMemo</h3>
+<h3>1.4.10.4 mmlFs:bofEnd</h3>
+<p>【内容】観察を終了した時間。</p>
+<p>【省略】省略可</p>
+<p>【データ型】dateTime</p>
+
+<h3>1.4.10.4 mmlFs:bofMemo</h3>
 <p>【内容】数値化されない頻度表現。頻回、乏尿など。</p>
 <p>【省略】省略可</p>
 <p>【データ型】string</p>
