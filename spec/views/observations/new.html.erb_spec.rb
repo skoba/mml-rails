@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "observations/new" do
   before(:each) do
-    assign(:observation, double(Observation,
+    assign(:observation, stub_model(Observation,
       :item => "MyString",
       :value => 1.5,
       :unit => "MyString"

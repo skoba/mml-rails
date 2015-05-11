@@ -9,7 +9,7 @@ describe ArchetypesController do
     it "assigns all archetypes as @archetypes" do
       archetype = Archetype.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:archetypes).should eq([archetype])
+      expect(assigns(:archetypes)).to eq([archetype])
     end
   end
 
@@ -17,14 +17,14 @@ describe ArchetypesController do
     it "assigns the requested archetype as @archetype" do
       archetype = Archetype.create! valid_attributes
       get :show, {:id => archetype.to_param}, valid_session
-      assigns(:archetype).should eq(archetype)
+      expect(assigns(:archetype)).to eq(archetype)
     end
   end
 
   describe "GET new" do
     it "assigns a new archetype as @archetype" do
       get :new, {}, valid_session
-      assigns(:archetype).should be_a_new(Archetype)
+      expect(assigns(:archetype)).to be_a_new(Archetype)
     end
   end
 
@@ -32,7 +32,7 @@ describe ArchetypesController do
     it "assigns the requested archetype as @archetype" do
       archetype = Archetype.create! valid_attributes
       get :edit, {:id => archetype.to_param}, valid_session
-      assigns(:archetype).should eq(archetype)
+      expect(assigns(:archetype)).to eq(archetype)
     end
   end
 
@@ -46,27 +46,27 @@ describe ArchetypesController do
 
       it "assigns a newly created archetype as @archetype" do
         post :create, {:archetype => valid_attributes}, valid_session
-        assigns(:archetype).should be_a(Archetype)
-        assigns(:archetype).should be_persisted
+        expect(assigns(:archetype)).to be_a(Archetype)
+        expect(assigns(:archetype)).to be_persisted
       end
 
       it "redirects to the created archetype" do
         post :create, {:archetype => valid_attributes}, valid_session
-        response.should redirect_to(Archetype.last)
+        expect(response).to redirect_to(Archetype.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved archetype as @archetype" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Archetype.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Archetype).to receive(:save).and_return(false)
         post :create, {:archetype => { "uid" => "invalid value" }}, valid_session
-        assigns(:archetype).should be_a_new(Archetype)
+        expect(assigns(:archetype)).to be_a_new(Archetype)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Archetype.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Archetype).to receive(:save).and_return(false)
         post :create, {:archetype => { "uid" => "invalid value" }}, valid_session
         expect(response).to render_template("new")
       end
@@ -81,20 +81,20 @@ describe ArchetypesController do
         # specifies that the Archetype created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Archetype.any_instance.should_receive(:update).with({ "uid" => "MyString" })
+        expect_any_instance_of(Archetype).to receive(:update).with({ "uid" => "MyString" })
         put :update, {:id => archetype.to_param, :archetype => { "uid" => "MyString" }}, valid_session
       end
 
       it "assigns the requested archetype as @archetype" do
         archetype = Archetype.create! valid_attributes
         put :update, {:id => archetype.to_param, :archetype => valid_attributes}, valid_session
-        assigns(:archetype).should eq(archetype)
+        expect(assigns(:archetype)).to eq(archetype)
       end
 
       it "redirects to the archetype" do
         archetype = Archetype.create! valid_attributes
         put :update, {:id => archetype.to_param, :archetype => valid_attributes}, valid_session
-        response.should redirect_to(archetype)
+        expect(response).to redirect_to(archetype)
       end
     end
 
@@ -102,17 +102,17 @@ describe ArchetypesController do
       it "assigns the archetype as @archetype" do
         archetype = Archetype.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Archetype.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Archetype).to receive(:save).and_return(false)
         put :update, {:id => archetype.to_param, :archetype => { "uid" => "invalid value" }}, valid_session
-        assigns(:archetype).should eq(archetype)
+        expect(assigns(:archetype)).to eq(archetype)
       end
 
       it "re-renders the 'edit' template" do
         archetype = Archetype.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Archetype.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Archetype).to receive(:save).and_return(false)
         put :update, {:id => archetype.to_param, :archetype => { "uid" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -128,7 +128,7 @@ describe ArchetypesController do
     it "redirects to the archetypes list" do
       archetype = Archetype.create! valid_attributes
       delete :destroy, {:id => archetype.to_param}, valid_session
-      response.should redirect_to(archetypes_url)
+      expect(response).to redirect_to(archetypes_url)
     end
   end
 

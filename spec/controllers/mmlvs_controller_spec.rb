@@ -8,7 +8,7 @@ describe MmlvsController do
 
     it 'index show mmlvs array' do
       get :index
-      assigns(:mmlvs).should eq [@mmlvs]
+      expect(assigns(:mmlvs)).to eq [@mmlvs]
     end
   end
 end

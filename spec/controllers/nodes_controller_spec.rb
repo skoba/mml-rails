@@ -34,7 +34,7 @@ describe NodesController do
     it "assigns all nodes as @nodes" do
       node = Node.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:nodes).should eq([node])
+      expect(assigns(:nodes)).to eq([node])
     end
   end
 
@@ -42,14 +42,14 @@ describe NodesController do
     it "assigns the requested node as @node" do
       node = Node.create! valid_attributes
       get :show, {:id => node.to_param}, valid_session
-      assigns(:node).should eq(node)
+      expect(assigns(:node)).to eq(node)
     end
   end
 
   describe "GET new" do
     it "assigns a new node as @node" do
       get :new, {}, valid_session
-      assigns(:node).should be_a_new(Node)
+      expect(assigns(:node)).to be_a_new(Node)
     end
   end
 
@@ -57,7 +57,7 @@ describe NodesController do
     it "assigns the requested node as @node" do
       node = Node.create! valid_attributes
       get :edit, {:id => node.to_param}, valid_session
-      assigns(:node).should eq(node)
+      expect(assigns(:node)).to eq(node)
     end
   end
 
@@ -71,29 +71,29 @@ describe NodesController do
 
       it "assigns a newly created node as @node" do
         post :create, {:node => valid_attributes}, valid_session
-        assigns(:node).should be_a(Node)
-        assigns(:node).should be_persisted
+        expect(assigns(:node)).to be_a(Node)
+        expect(assigns(:node)).to be_persisted
       end
 
       it "redirects to the created node" do
         post :create, {:node => valid_attributes}, valid_session
-        response.should redirect_to(Node.last)
+        expect(response).to redirect_to(Node.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved node as @node" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Node.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Node).to receive(:save).and_return(false)
         post :create, {:node => { "path" => "invalid value" }}, valid_session
-        assigns(:node).should be_a_new(Node)
+        expect(assigns(:node)).to be_a_new(Node)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Node.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Node).to receive(:save).and_return(false)
         post :create, {:node => { "path" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        expect(response).to render_template("new")
       end
     end
   end
@@ -106,20 +106,20 @@ describe NodesController do
         # specifies that the Node created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Node.any_instance.should_receive(:update).with({ "path" => "MyString" })
+        expect_any_instance_of(Node).to receive(:update).with({ "path" => "MyString" })
         put :update, {:id => node.to_param, :node => { "path" => "MyString" }}, valid_session
       end
 
       it "assigns the requested node as @node" do
         node = Node.create! valid_attributes
         put :update, {:id => node.to_param, :node => valid_attributes}, valid_session
-        assigns(:node).should eq(node)
+        expect(assigns(:node)).to eq(node)
       end
 
       it "redirects to the node" do
         node = Node.create! valid_attributes
         put :update, {:id => node.to_param, :node => valid_attributes}, valid_session
-        response.should redirect_to(node)
+        expect(response).to redirect_to(node)
       end
     end
 
@@ -127,17 +127,17 @@ describe NodesController do
       it "assigns the node as @node" do
         node = Node.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Node.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Node).to receive(:save).and_return(false)
         put :update, {:id => node.to_param, :node => { "path" => "invalid value" }}, valid_session
-        assigns(:node).should eq(node)
+        expect(assigns(:node)).to eq(node)
       end
 
       it "re-renders the 'edit' template" do
         node = Node.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Node.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Node).to receive(:save).and_return(false)
         put :update, {:id => node.to_param, :node => { "path" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -153,7 +153,7 @@ describe NodesController do
     it "redirects to the nodes list" do
       node = Node.create! valid_attributes
       delete :destroy, {:id => node.to_param}, valid_session
-      response.should redirect_to(nodes_url)
+      expect(response).to redirect_to(nodes_url)
     end
   end
 

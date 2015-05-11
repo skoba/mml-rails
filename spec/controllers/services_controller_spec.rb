@@ -38,7 +38,7 @@ describe ServicesController do
     it "assigns all services as @services" do
       service = Service.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:services).should eq([service])
+      expect(assigns(:services)).to eq([service])
     end
   end
 
@@ -46,14 +46,14 @@ describe ServicesController do
     it "assigns the requested service as @service" do
       service = Service.create! valid_attributes
       get :show, {:id => service.to_param}, valid_session
-      assigns(:service).should eq(service)
+      expect(assigns(:service)).to eq(service)
     end
   end
 
   describe "GET new" do
     it "assigns a new service as @service" do
       get :new, {}, valid_session
-      assigns(:service).should be_a_new(Service)
+      expect(assigns(:service)).to be_a_new(Service)
     end
   end
 
@@ -61,7 +61,7 @@ describe ServicesController do
     it "assigns the requested service as @service" do
       service = Service.create! valid_attributes
       get :edit, {:id => service.to_param}, valid_session
-      assigns(:service).should eq(service)
+      expect(assigns(:service)).to eq(service)
     end
   end
 
@@ -75,29 +75,29 @@ describe ServicesController do
 
       it "assigns a newly created service as @service" do
         post :create, {:service => valid_attributes}, valid_session
-        assigns(:service).should be_a(Service)
-        assigns(:service).should be_persisted
+        expect(assigns(:service)).to be_a(Service)
+        expect(assigns(:service)).to be_persisted
       end
 
       it "redirects to the created service" do
         post :create, {:service => valid_attributes}, valid_session
-        response.should redirect_to(Service.last)
+        expect(response).to redirect_to(Service.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved service as @service" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Service.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Service).to receive(:save).and_return(false)
         post :create, {:service => { "type" => "invalid value" }}, valid_session
-        assigns(:service).should be_a_new(Service)
+        expect(assigns(:service)).to be_a_new(Service)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Service.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Service).to receive(:save).and_return(false)
         post :create, {:service => { "type" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        expect(response).to render_template("new")
       end
     end
   end
@@ -110,20 +110,20 @@ describe ServicesController do
         # specifies that the Service created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Service.any_instance.should_receive(:update).with({ "type" => "" })
+        expect_any_instance_of(Service).to receive(:update).with({ "type" => "" })
         put :update, {:id => service.to_param, :service => { "type" => "" }}, valid_session
       end
 
       it "assigns the requested service as @service" do
         service = Service.create! valid_attributes
         put :update, {:id => service.to_param, :service => valid_attributes}, valid_session
-        assigns(:service).should eq(service)
+        expect(assigns(:service)).to eq(service)
       end
 
       it "redirects to the service" do
         service = Service.create! valid_attributes
         put :update, {:id => service.to_param, :service => valid_attributes}, valid_session
-        response.should redirect_to(service)
+        expect(response).to redirect_to(service)
       end
     end
 
@@ -131,17 +131,17 @@ describe ServicesController do
       it "assigns the service as @service" do
         service = Service.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Service.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Service).to receive(:save).and_return(false)
         put :update, {:id => service.to_param, :service => { "type" => "invalid value" }}, valid_session
-        assigns(:service).should eq(service)
+        expect(assigns(:service)).to eq(service)
       end
 
       it "re-renders the 'edit' template" do
         service = Service.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Service.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Service).to receive(:save).and_return(false)
         put :update, {:id => service.to_param, :service => { "type" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -157,7 +157,7 @@ describe ServicesController do
     it "redirects to the services list" do
       service = Service.create! valid_attributes
       delete :destroy, {:id => service.to_param}, valid_session
-      response.should redirect_to(services_url)
+      expect(response).to redirect_to(services_url)
     end
   end
 

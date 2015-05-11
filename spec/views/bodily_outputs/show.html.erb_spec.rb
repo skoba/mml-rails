@@ -14,10 +14,10 @@ describe "bodily_outputs/show" do
   it "renders attributes in <p>" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Type/)
-    rendered.should match(/1.5/)
-    rendered.should match(/Unit/)
-    rendered.should match(/Color/)
-    rendered.should match(/Status/)
+    expect(rendered).to match(/Type/)
+    expect(rendered).to match(/1.5/)
+    expect(rendered).to match(/Unit/)
+    expect(rendered).to match(/Color/)
+    expect(rendered).to match(/Status/)
   end
 end

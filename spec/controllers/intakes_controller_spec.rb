@@ -16,7 +16,7 @@ describe IntakesController do
     it "assigns all intakes as @intakes" do
       intake = Intake.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:intakes).should eq([intake])
+      expect(assigns(:intakes)).to eq([intake])
     end
   end
 
@@ -24,14 +24,14 @@ describe IntakesController do
     it "assigns the requested intake as @intake" do
       intake = Intake.create! valid_attributes
       get :show, {:id => intake.to_param}, valid_session
-      assigns(:intake).should eq(intake)
+      expect(assigns(:intake)).to eq(intake)
     end
   end
 
   describe "GET new" do
     it "assigns a new intake as @intake" do
       get :new, {}, valid_session
-      assigns(:intake).should be_a_new(Intake)
+      expect(assigns(:intake)).to be_a_new(Intake)
     end
   end
 
@@ -39,7 +39,7 @@ describe IntakesController do
     it "assigns the requested intake as @intake" do
       intake = Intake.create! valid_attributes
       get :edit, {:id => intake.to_param}, valid_session
-      assigns(:intake).should eq(intake)
+      expect(assigns(:intake)).to eq(intake)
     end
   end
 
@@ -53,29 +53,29 @@ describe IntakesController do
 
       it "assigns a newly created intake as @intake" do
         post :create, {:intake => valid_attributes}, valid_session
-        assigns(:intake).should be_a(Intake)
-        assigns(:intake).should be_persisted
+        expect(assigns(:intake)).to be_a(Intake)
+        expect(assigns(:intake)).to be_persisted
       end
 
       it "redirects to the created intake" do
         post :create, {:intake => valid_attributes}, valid_session
-        response.should redirect_to(Intake.last)
+        expect(response).to redirect_to(Intake.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved intake as @intake" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Intake.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Intake).to receive(:save).and_return(false)
         post :create, {:intake => { type: 'invalid_value' }}, valid_session
-        assigns(:intake).should be_a_new(Intake)
+        expect(assigns(:intake)).to be_a_new(Intake)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Intake.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Intake).to receive(:save).and_return(false)
         post :create, {:intake => {type: 'invalid_value'}}, valid_session
-        response.should render_template("new")
+        expect(response).to render_template("new")
       end
     end
   end
@@ -88,20 +88,20 @@ describe IntakesController do
         # specifies that the Intake created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Intake.any_instance.should_receive(:update).with({ "type" => "valid_value" })
+        expect_any_instance_of(Intake).to receive(:update).with({ "type" => "valid_value" })
         put :update, {:id => intake.to_param, :intake => { "type" => "valid_value" }}, valid_session
       end
 
       it "assigns the requested intake as @intake" do
         intake = Intake.create! valid_attributes
         put :update, {:id => intake.to_param, :intake => valid_attributes}, valid_session
-        assigns(:intake).should eq(intake)
+        expect(assigns(:intake)).to eq(intake)
       end
 
       it "redirects to the intake" do
         intake = Intake.create! valid_attributes
         put :update, {:id => intake.to_param, :intake => valid_attributes}, valid_session
-        response.should redirect_to(intake)
+        expect(response).to redirect_to(intake)
       end
     end
 
@@ -109,17 +109,17 @@ describe IntakesController do
       it "assigns the intake as @intake" do
         intake = Intake.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Intake.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Intake).to receive(:save).and_return(false)
         put :update, {:id => intake.to_param, :intake => { type: 'invalid_value' }}, valid_session
-        assigns(:intake).should eq(intake)
+        expect(assigns(:intake)).to eq(intake)
       end
 
       it "re-renders the 'edit' template" do
         intake = Intake.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Intake.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Intake).to receive(:save).and_return(false)
         put :update, {:id => intake.to_param, :intake => { type: 'invalid_value' }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -135,7 +135,7 @@ describe IntakesController do
     it "redirects to the intakes list" do
       intake = Intake.create! valid_attributes
       delete :destroy, {:id => intake.to_param}, valid_session
-      response.should redirect_to(intakes_url)
+      expect(response).to redirect_to(intakes_url)
     end
   end
 

@@ -43,6 +43,7 @@ gem 'unicorn'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
   gem 'spring'
   gem 'guard' #, '1.7.0'
   gem 'guard-rspec' #, '2.6.0'

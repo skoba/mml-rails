@@ -38,7 +38,7 @@ describe ObservationsController do
     it "assigns all observations as @observations" do
       observation = Observation.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:observations).should eq([observation])
+      expect(assigns(:observations)).to eq([observation])
     end
   end
 
@@ -46,14 +46,14 @@ describe ObservationsController do
     it "assigns the requested observation as @observation" do
       observation = Observation.create! valid_attributes
       get :show, {:id => observation.to_param}, valid_session
-      assigns(:observation).should eq(observation)
+      expect(assigns(:observation)).to eq(observation)
     end
   end
 
   describe "GET new" do
     it "assigns a new observation as @observation" do
       get :new, {}, valid_session
-      assigns(:observation).should be_a_new(Observation)
+      expect(assigns(:observation)).to be_a_new(Observation)
     end
   end
 
@@ -61,7 +61,7 @@ describe ObservationsController do
     it "assigns the requested observation as @observation" do
       observation = Observation.create! valid_attributes
       get :edit, {:id => observation.to_param}, valid_session
-      assigns(:observation).should eq(observation)
+      expect(assigns(:observation)).to eq(observation)
     end
   end
 
@@ -75,29 +75,29 @@ describe ObservationsController do
 
       it "assigns a newly created observation as @observation" do
         post :create, {:observation => valid_attributes}, valid_session
-        assigns(:observation).should be_a(Observation)
-        assigns(:observation).should be_persisted
+        expect(assigns(:observation)).to be_a(Observation)
+        expect(assigns(:observation)).to be_persisted
       end
 
       it "redirects to the created observation" do
         post :create, {:observation => valid_attributes}, valid_session
-        response.should redirect_to(Observation.last)
+        expect(response).to redirect_to(Observation.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved observation as @observation" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Observation.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Observation).to receive(:save).and_return(false)
         post :create, {:observation => { "item" => "invalid value" }}, valid_session
-        assigns(:observation).should be_a_new(Observation)
+        expect(assigns(:observation)).to be_a_new(Observation)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Observation.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Observation).to receive(:save).and_return(false)
         post :create, {:observation => { "item" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        expect(response).to render_template("new")
       end
     end
   end
@@ -110,20 +110,20 @@ describe ObservationsController do
         # specifies that the Observation created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Observation.any_instance.should_receive(:update).with({ "item" => "MyString" })
+        expect_any_instance_of(Observation).to receive(:update).with({ "item" => "MyString" })
         put :update, {:id => observation.to_param, :observation => { "item" => "MyString" }}, valid_session
       end
 
       it "assigns the requested observation as @observation" do
         observation = Observation.create! valid_attributes
         put :update, {:id => observation.to_param, :observation => valid_attributes}, valid_session
-        assigns(:observation).should eq(observation)
+        expect(assigns(:observation)).to eq(observation)
       end
 
       it "redirects to the observation" do
         observation = Observation.create! valid_attributes
         put :update, {:id => observation.to_param, :observation => valid_attributes}, valid_session
-        response.should redirect_to(observation)
+        expect(response).to redirect_to(observation)
       end
     end
 
@@ -131,17 +131,17 @@ describe ObservationsController do
       it "assigns the observation as @observation" do
         observation = Observation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Observation.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Observation).to receive(:save).and_return(false)
         put :update, {:id => observation.to_param, :observation => { "item" => "invalid value" }}, valid_session
-        assigns(:observation).should eq(observation)
+        expect(assigns(:observation)).to eq(observation)
       end
 
       it "re-renders the 'edit' template" do
         observation = Observation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Observation.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Observation).to receive(:save).and_return(false)
         put :update, {:id => observation.to_param, :observation => { "item" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -157,7 +157,7 @@ describe ObservationsController do
     it "redirects to the observations list" do
       observation = Observation.create! valid_attributes
       delete :destroy, {:id => observation.to_param}, valid_session
-      response.should redirect_to(observations_url)
+      expect(response).to redirect_to(observations_url)
     end
   end
 
