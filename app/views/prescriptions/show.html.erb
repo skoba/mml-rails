@@ -1,14 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Batch:</strong>
-  <%= @prescription.batch %>
-</p>
-
-<p>
-  <strong>Instruction:</strong>
-  <%= @prescription.instruction %>
-</p>
-
 <%= link_to 'Edit', edit_prescription_path(@prescription) %> |
 <%= link_to 'Back', prescriptions_path %>

@@ -11,32 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511184428) do
+ActiveRecord::Schema.define(version: 20150511191930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "archetypes", force: :cascade do |t|
-    t.string   "uid",         limit: 255
-    t.string   "archetypeid", limit: 255
+    t.string   "uid"
+    t.string   "archetypeid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "bodily_outputs", force: :cascade do |t|
-    t.string   "type",       limit: 255
+    t.string   "type"
     t.float    "volume"
-    t.string   "unit",       limit: 255
-    t.string   "color",      limit: 255
-    t.string   "status",     limit: 255
+    t.string   "unit"
+    t.string   "color"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "intakes", force: :cascade do |t|
-    t.string   "type",       limit: 255
+    t.string   "type"
     t.float    "volume"
-    t.string   "unit",       limit: 255
+    t.string   "unit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 20150511184428) do
   end
 
   create_table "nodes", force: :cascade do |t|
-    t.string   "path",         limit: 255
-    t.string   "atcode",       limit: 255
-    t.string   "rmclass",      limit: 255
-    t.string   "txt_value",    limit: 255
+    t.string   "path"
+    t.string   "atcode"
+    t.string   "rmclass"
+    t.string   "txt_value"
     t.integer  "int_value"
     t.float    "flt_value"
     t.datetime "created_at"
@@ -66,37 +66,35 @@ ActiveRecord::Schema.define(version: 20150511184428) do
   end
 
   create_table "observations", force: :cascade do |t|
-    t.string   "item",       limit: 255
+    t.string   "item"
     t.float    "value"
-    t.string   "unit",       limit: 255
+    t.string   "unit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "people", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "prescriptions", force: :cascade do |t|
-    t.integer  "batch"
-    t.string   "instruction"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "services", force: :cascade do |t|
-    t.string   "type",            limit: 255
+    t.string   "type"
     t.datetime "action_datetime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "vital_signs", force: :cascade do |t|
-    t.string   "type",       limit: 255
+    t.string   "type"
     t.integer  "val"
-    t.string   "unit",       limit: 255
+    t.string   "unit"
     t.integer  "mmlvs_id"
     t.datetime "created_at"
     t.datetime "updated_at"

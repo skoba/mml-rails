@@ -155,4 +155,5 @@ RSpec.describe PrescriptionsController, type: :controller do
       expect(response).to redirect_to(prescriptions_url)
     end
   end
+
 end

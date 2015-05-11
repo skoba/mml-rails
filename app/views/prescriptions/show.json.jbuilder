@@ -1,1 +1,1 @@
-json.extract! @prescription, :id, :batch, :instruction, :created_at, :updated_at
+json.extract! @prescription, :id, :created_at, :updated_at
