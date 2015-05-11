@@ -3,14 +3,14 @@ require 'spec_helper'
 describe "bodily_outputs/index" do
   before(:each) do
     assign(:bodily_outputs, [
-      stub_model(BodilyOutput,
+      double(BodilyOutput,
         :type => "Type",
         :volume => 1.5,
         :unit => "Unit",
         :color => "Color",
         :status => "Status"
       ),
-      stub_model(BodilyOutput,
+      double(BodilyOutput,
         :type => "Type",
         :volume => 1.5,
         :unit => "Unit",
