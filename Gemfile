@@ -7,6 +7,7 @@ gem 'rails' #, '~> 4.0.0.beta'
 
 #gem 'sqlite3'
 gem 'pg'
+gem 'rails_12factor'
 
 # Gems used only for assets and not required
 # in production environments by default.
