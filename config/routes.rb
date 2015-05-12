@@ -1,6 +1,4 @@
 MmlCare::Application.routes.draw do
-
-  resources :prescriptions
   resources :archetypes
 
   resources :nodes
@@ -11,20 +9,16 @@ MmlCare::Application.routes.draw do
   get 'mmlvs/compare_vs_lb' => 'mmlvs#compare_vs_lb'
   get 'mmlvs/specification' => 'mmlvs#specification'
   get 'mmlca/sample_instance' => 'mmlca#sample_instance'
+  get 'prescriptions/specification' => 'prescriptions#specification'
+
+  resources :prescriptions
   resources :mmlca
   resources :mmlvs
-
   resources :people
-
   resources :services
-
   resources :observations
-
   resources :intakes
-
   resources :bodily_outputs
-
-
   
   root to: 'mmlca#overview'
 
