@@ -35,36 +35,35 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default navbar-static-top">
       <div class="container-fluid">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-target="#bs-example-nabvar-collapse-1" data-toggle="collapse">
+	<div class="navbar-inner">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse">
+            <span class="sr-only">Toggle navigation</span>
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>  
-          <a class="brand" href="#">MML Care Module</a>
+          <a class="brand" href="http://mml-care.herokuapp.com">MML New Modules</a>
 	</div>
-
-          <div class="container nav-collapse">
-            <ul class="nav">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
               <li><%= link_to "概要", mmlca_overview_path %></li>
               <li><%= link_to "バイタルサインモジュール", mmlvs_specification_path %></li>
               <li><%= link_to "体温表モジュール", mmlca_specification_path %></li>
               <li><%= link_to "テーブル", mmlca_table_path %></li>
               <li><%= link_to "サンプル", mmlvs_index_path %></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
-
     <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <%= yield %>
-          </div>
-          <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+        <div class="col-md-3">
             <div class="well sidebar-nav">
               <h3>Contents</h3>
               <ul class="nav nav-list">
@@ -74,13 +73,14 @@
                 <li><%= link_to "体温表モジュール", mmlca_specification_path %></li>
                 <li><%= link_to "テーブル", mmlca_table_path %></li>
                 <li><%= link_to "サンプル", mmlvs_index_path %></li>
+                <li><%= link_to "処方箋モジュール" </li>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->
 
       <footer>
-        <p>&copy; MedXML consortium 2013</p>
+        <p>&copy; MedXML consortium 2013-2015</p>
       </footer>
 
     </div> <!-- /container -->
