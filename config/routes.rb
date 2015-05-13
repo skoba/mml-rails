@@ -1,4 +1,5 @@
 MmlCare::Application.routes.draw do
+  resources :injections
   resources :archetypes
 
   resources :nodes
