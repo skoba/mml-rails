@@ -46,12 +46,12 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-activemodel-mocks'
-  gem 'spring-commands-rspec'
-  gem 'spring'
-  gem 'guard' #, '1.7.0'
-  gem 'guard-rails'
-  gem 'guard-rspec' #, '2.6.0'
-  gem 'guard-livereload'
+  # gem 'spring-commands-rspec'
+  # gem 'spring'
+  # gem 'guard' #, '1.7.0'
+  # gem 'guard-rails'
+  # gem 'guard-rspec' #, '2.6.0'
+  # gem 'guard-livereload'
 #  gem 'listen', '~> 2.7'
   gem 'libnotify'
   gem 'simplecov'
@@ -60,7 +60,7 @@ group :test, :development do
   gem 'factory_girl_rails'
 end
 
-require 'rbconfig'
-if RbConfig::CONFIG['target_os'] =~ /(?i-mx:bsd|dragonfly)/
-  gem 'rb-kqueue', '>= 0.2'
-end
+# require 'rbconfig'
+# if RbConfig::CONFIG['target_os'] =~ /(?i-mx:bsd|dragonfly)/
+#   gem 'rb-kqueue', '>= 0.2'
+# end
