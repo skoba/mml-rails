@@ -1,0 +1,292 @@
+<section>
+<article>
+<h1>注射記録モジュール(Draft)</h1>
+<h2>目的と対象</h2>
+
+<p>実施された注射を記録するために使用される。</p>
+
+<p>このモジュールでは臨床で実施された注射を記録することを目的としている。</p>
+
+<p>したがって対象は注射線にしたがって実行された結果であって、薬局での払い出し結果や注射処方箋そのものではない。</p>
+
+<h2>namespace宣言</h2>
+このモジュールのnamespaceは以下のように宣言する。<br/>
+
+<span>xmlns:mmlPs="http://www.medxml.net/MML/ContentModule/Injection/1.0"</span>
+
+<h2>文書ヘッダー情報 (docInfo) のモジュール個別仕様</h2>
+
+<h3>docInfo</h3>
+<p>属性 contentModuleType に MML0005 テーブルより「injection」を入力すること．</p>
+
+<h3>title</h3>
+v
+<p>このモジュールのタイトルは「注射記録」であることを想定している。</p>
+
+<p>属性の generationPurpose は，MML0007 テーブルより「injection」 (注射) と入力すること．</p>
+
+<h3>confirmDate</h3>
+
+モジュール生成日であり，モジュール内の注射実施記録（最終）日時と一致させる．
+
+<h3>mmlCi:CreatorInfo</h3>
+
+<p>実際に注射を実施するのは，看護師を含めた医療従事者であるが，このモジュールでは注射に関わったスタッフを代表して処方箋を記載した医師が作成者情報として記録される。</p>
+
+<table class="table table-bordered">
+<thead>
+<tr>
+  <th colspan="6">mmlPs</th>
+</tr>
+<tr>
+  <th></th>
+  <th>Elements</th>
+  <th>Attribute</th>
+  <th>DataTypes</th>
+  <th>Occurrence</th>
+  <th>Table Id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>mmlInj:InjectionModule</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1</td>
+  <td>mmlInj:medication</td>
+  <td></td>
+  <td></td>
+  <td>+</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.1</td>
+  <td>mmlInj:medicine</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.1.1</td>
+  <td>mmlInj:name</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.1.2</td>
+  <td>mmlInj:code</td>
+  <td></td>
+  <td>string</td>
+  <td>+</td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>mmlInj:system</td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.2</td>
+  <td>mmlInj:dose</td>
+  <td></td>
+  <td>decimal</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.3</td>
+  <td>mmlInj:doseUnit</td>
+  <td></td>
+  <td>string</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.4</td>
+  <td>mmPs:startDateTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.5</td>
+  <td>mmPs:endDateTime</td>
+  <td></td>
+  <td>dateTime</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.6</td>
+  <td>mmlInj:instruction</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.7</td>
+  <td>mmlInj:route</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.8</td>
+  <td>mmlInj:site</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.9</td>
+  <td>mmlInj:deliveryMethod</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.10</td>
+  <td>mmlInj:batchNo</td>
+  <td></td>
+  <td>decimal</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.1.11</td>
+  <td>mmlInj:additionalInstruction</td>
+  <td></td>
+  <td>string</td>
+  <td>?</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1.2</td>
+  <td>mmlInj:comment</td>
+  <td></td>
+  <td></td>
+  <td>?</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+#REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
+
+<h2>エレメント解説</h2>
+<h3>1.mmlInj:InjectionModule</h3>
+<p>【内容】注射記録モジュール</p>
+<h3>1.1 mmlPs:medication</h3>
+<p>【内容】注射された薬剤と用量、用法の組み合わせ</p>
+<p>【省略】不可</p>
+<p>【繰り返し】1回以上</p>
+<h3>1.1.1 mmlInj:medicine</h3>
+<p>【内容】薬剤名称と対応するコードのセット</p>
+<p>【省略】不可</p>
+<h3>1.1.1.1 mmlInj:name</h3>
+<p>【内容】薬剤名称</p>
+<p>【省略】不可</p>
+<h3>1.1.1.2 mmlInj:code</h3>
+<p>【内容】薬剤コード</p>
+<p>【繰り返し】0回以上</p>
+<p>【属性】
+<table class="table table-bordered">
+<tr>
+  <th>属性名</th>
+  <th>データ型</th>
+  <th>省略</th>
+  <th>使用テーブル</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>mmlInj:system</td>
+  <td>string </td>
+  <td>省略不可</td>
+  <td>用いたコード体系の名称を記載</td>
+</tr>
+</table>
+</p>
+
+<h3>1.1.2 mmlInj:dose</h3>
+<p>【内容】用量</p>
+<p>【省略】不可</p>
+<p>【データ型】decimal</p>
+<p>【説明】慣習として1/2 Aや2Vといった製剤単位での記載も可能であるが，g, mgのように比較できる質量単位で記載されることが望ましい</p>
+
+<h3>1.1.3 mmlInj:doseUnit</h3>
+<p>【内容】用量の単位</p>
+<p>【省略】不可</p>
+<p>【データ型】string</p>
+
+<h3>1.1.4 mmPs:startDateTime</h3>
+<p>【内容】投与開始日時</p>
+<p>【省略】可</p>
+<p>【データ型】date</p>
+<p>【説明】投与を開始した時間を記載する</p>
+
+<h3>1.1.5 mmPs:startDateTime</h3>
+<p>【内容】投与修了日時</p>
+<p>【省略】可</p>
+<p>【データ型】date</p>
+<p>【説明】投与を修了した時間を記載する</p>
+
+<h3>1.1.6 mmPs:instruction</h3>
+<p>【内容】用法指示</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】使用法に関する指示を記載する</p>
+
+<h3>1.1.7 mmlInj:route</h3>
+<p>【内容】投与経路</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】投与する注射ルートを記載する。例：右前腕留置ルート，右鎖骨下中心静脈ルート</p>
+
+<h3>1.1.8 mmlInj:site</h3>
+<p>【内容】投与部位</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】注射した部位を記載する。例：右上腕三角，腹部</p>
+
+<h3>1.1.9 mmlInj:deliveryMethod</h3>
+<p>【内容】注射方法</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】注射方法について記載する。例：筋注，皮下注，静注，点滴静注，中心静脈注射</p>
+
+<h3>1.1.10 mmlInj:batchNo</h3>
+<p>【内容】処方番号</p>
+<p>【省略】可</p>
+<p>【データ型】decimal</p>
+<p>【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。</p>
+
+<h3>1.1.11 mmlInj:additionalInstruction</h3>
+<p>【内容】追加指示，コメント</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】注射に関する用法，用量に関する追加指示。必要に応じて記載する。</p>
+
+<h3>1.2 mmlInj:comment</h3>
+<p>【内容】コメント</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】</p>
+</article>
+</section>

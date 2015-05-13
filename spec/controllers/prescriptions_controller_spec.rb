@@ -156,7 +156,7 @@ RSpec.describe PrescriptionsController, type: :controller do
     end
   end
 
-  describe "Specification" do
+  describe "#specification" do
     it 'renders prescription specifiction' do
       get :specification
       expect(response).to render_template "specification"
