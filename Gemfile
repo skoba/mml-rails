@@ -24,6 +24,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder' #, '~> 1.0.1'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+
 #gem 'twitter-bootstrap-rails'
 #gem 'less'
 #gem 'less-rails'
