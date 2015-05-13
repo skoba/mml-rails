@@ -29,7 +29,7 @@
 
 <h3>confirmDate</h3>
 
-モジュール生成日であり，モジュール内の発行日時と一致させる．
+モジュール生成日であり，処方箋の発行日時とみなす．
 
 <h3>mmlCi:CreatorInfo</h3>
 
@@ -326,10 +326,17 @@
 <p>【データ型】string</p>
 <p>【説明】用法，用量に関する追加指示。必要に応じて記載する。</p>
 
-<h3>1.2 mmlPs:comment</h3>
+<h3>1.2 mmlPs:NarcoticLicenseNumber</h3>
+<p>【内容】麻薬施用者番号</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】麻薬処方箋の場合には麻薬施用者番号及び患者住所を記載する必要がある。</p>
+
+<h3>1.3 mmlPs:comment</h3>
 <p>【内容】コメント</p>
 <p>【省略】可</p>
 <p>【データ型】string</p>
 <p>【説明】</p>
+
 </article>
 </section>

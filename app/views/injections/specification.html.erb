@@ -7,7 +7,7 @@
 
 <p>このモジュールでは臨床で実施された注射を記録することを目的としている。</p>
 
-<p>したがって対象は注射線にしたがって実行された結果であって、薬局での払い出し結果や注射処方箋そのものではない。</p>
+<p>したがって対象は注射指示箋にしたがって実行された結果であって、薬局での払い出し結果や注射処方箋そのものではない。</p>
 
 <h2>namespace宣言</h2>
 このモジュールのnamespaceは以下のように宣言する。<br/>
@@ -36,12 +36,12 @@ v
 <table class="table table-bordered">
 <thead>
 <tr>
-  <th colspan="6">mmlPs</th>
+  <th colspan="6">mmlInj</th>
 </tr>
 <tr>
   <th></th>
   <th>Elements</th>
-  <th>Attribute</th>
+v  <th>Attribute</th>
   <th>DataTypes</th>
   <th>Occurrence</th>
   <th>Table Id</th>
@@ -283,7 +283,13 @@ v
 <p>【データ型】string</p>
 <p>【説明】注射に関する用法，用量に関する追加指示。必要に応じて記載する。</p>
 
-<h3>1.2 mmlInj:comment</h3>
+<h3>1.2 mmlInj:NarcoticPrescriptionLicenseNumber</h3>
+<p>【内容】麻薬施用者番号</p>
+<p>【省略】可</p>
+<p>【データ型】string</p>
+<p>【説明】麻薬処方箋の場合には麻薬施用者番号及び患者住所を記載する必要がある。</p>
+
+<h3>1.3 mmlInj:comment</h3>
 <p>【内容】コメント</p>
 <p>【省略】可</p>
 <p>【データ型】string</p>
