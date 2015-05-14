@@ -1,27 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Prescriptions</h1>
+<h1>処方一覧</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Issued date</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th>発行日</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @prescriptions.each do |prescription| %>
       <tr>
-	<td><%= prescription.created_at %></td>
+	<td><%= prescription.name %></td>
+	<td><%= prescription.created_at.to_s(:date_only) %></td>
         <td><%= link_to 'Show', prescription %></td>
-        <td><%= link_to 'Edit', edit_prescription_path(prescription) %></td>
-        <td><%= link_to 'Destroy', prescription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Prescription', new_prescription_path %>

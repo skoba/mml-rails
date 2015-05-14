@@ -1,0 +1,13 @@
+<div class="medication">
+  <% @prescription.batch.sort.each do |batch, medications| %>
+    Rp<%= batch %> <br />
+    <% medications.each do |medication| %>
+      <%= medication.name %> <%= medication.dose %> <%= medication.dose_unit %>
+      <% if medication.frequency %>
+	x <%= medication.frequency %>
+      <% end %>
+      <br />
+    <% end %>
+    <%= medications[0].instruction %> <br />
+  <% end %>
+</div>

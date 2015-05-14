@@ -62,11 +62,11 @@ FactoryGirl.define do
     dose_unit "g"
     frequency nil
     start_date "2015-05-13" 
-    duration 14
-    instruction "内服 2回 朝夕食後"
+    duration nil
+    instruction "1日3回左膝に塗布"
     prn "false"
-    route "経口"
-    form "散剤"
+    route "皮膚"
+    form "軟膏"
     batchNo 3
     brand_alternative "true"
     long_term "no"    
