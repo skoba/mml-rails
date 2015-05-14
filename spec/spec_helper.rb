@@ -48,8 +48,10 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = :random
   Kernel.srand config.seed
+  config.include FactoryGirl::Syntax::Methods
 
   config.before(:suite) do
+    FactoryGirl.reload
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
