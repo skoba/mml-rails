@@ -20,6 +20,7 @@ xml.mml('xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
           xml.tag! 'mmlPs:duration', medication.duration
         end
         xml.tag! 'mmlPs:instruction', medication.instruction
+        xml.tag! 'mmlPs:batchNo', medication.batchNo
         xml.tag! 'mmlPs:brandSubstitutionPermitted', medication.brand_alternative
       end
     end
