@@ -25,6 +25,7 @@ gem 'turbolinks'
 gem 'jbuilder' #, '~> 1.0.1'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'factory_girl_rails'
 
 #gem 'twitter-bootstrap-rails'
 #gem 'less'
@@ -60,7 +61,6 @@ group :test, :development do
   gem 'simplecov'
   gem 'database_cleaner' #, github: 'bmabey/database_cleaner'
   gem 'capybara'
-  gem 'factory_girl_rails'
 end
 
 # require 'rbconfig'
