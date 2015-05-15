@@ -1,7 +1,4 @@
 MmlCare::Application.routes.draw do
-  resources :archetypes
-  resources :nodes
-
   get 'mmlca/overview' => 'mmlca#overview'
   get 'mmlca/specification' => 'mmlca#specification'
   get 'mmlca/table' => 'mmlca#table'
@@ -20,6 +17,10 @@ MmlCare::Application.routes.draw do
   resources :intakes
   resources :bodily_outputs
   resources :injections
+  resources :regimen
+  resources :medications
+  resources :archetypes
+  resources :nodes
   
   root to: 'mmlca#overview'
 

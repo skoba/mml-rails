@@ -1,0 +1,1 @@
+json.extract! @medication, :id, :prescription_id, :name, :code, :dose, :dose_unit, :frequency, :duration, :instruction, :prn, :route, :form, :batchNo, :brand_alternative, :long_term, :created_at, :updated_at

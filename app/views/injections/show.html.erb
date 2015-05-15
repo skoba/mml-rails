@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= render "regimen" %>
 
-<%= link_to 'Edit', edit_injection_path(@injection) %> |
-<%= link_to 'Back', injections_path %>
+<%= link_to 'XML', injection_path(@injection, format: :xml) %>|<%= link_to 'Back', injections_path %>
+

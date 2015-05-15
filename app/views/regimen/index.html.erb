@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Regimen</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Injection</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Dose</th>
+      <th>Dose unit</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Instruction</th>
+      <th>Route</th>
+      <th>Site</th>
+      <th>Delivery method</th>
+      <th>Batch no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @regimen.each do |regiman| %>
+      <tr>
+        <td><%= regiman.injection %></td>
+        <td><%= regiman.name %></td>
+        <td><%= regiman.code %></td>
+        <td><%= regiman.dose %></td>
+        <td><%= regiman.dose_unit %></td>
+        <td><%= regiman.start %></td>
+        <td><%= regiman.end %></td>
+        <td><%= regiman.instruction %></td>
+        <td><%= regiman.route %></td>
+        <td><%= regiman.site %></td>
+        <td><%= regiman.delivery_method %></td>
+        <td><%= regiman.batch_no %></td>
+        <td><%= link_to 'Show', regiman %></td>
+        <td><%= link_to 'Edit', edit_regiman_path(regiman) %></td>
+        <td><%= link_to 'Destroy', regiman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Regiman', new_regiman_path %>

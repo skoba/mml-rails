@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Medications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prescription</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Dose</th>
+      <th>Dose unit</th>
+      <th>Frequency</th>
+      <th>Duration</th>
+      <th>Instruction</th>
+      <th>Prn</th>
+      <th>Route</th>
+      <th>Form</th>
+      <th>Batchno</th>
+      <th>Brand alternative</th>
+      <th>Long term</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medications.each do |medication| %>
+      <tr>
+        <td><%= medication.prescription %></td>
+        <td><%= medication.name %></td>
+        <td><%= medication.code %></td>
+        <td><%= medication.dose %></td>
+        <td><%= medication.dose_unit %></td>
+        <td><%= medication.frequency %></td>
+        <td><%= medication.duration %></td>
+        <td><%= medication.instruction %></td>
+        <td><%= medication.prn %></td>
+        <td><%= medication.route %></td>
+        <td><%= medication.form %></td>
+        <td><%= medication.batchNo %></td>
+        <td><%= medication.brand_alternative %></td>
+        <td><%= medication.long_term %></td>
+        <td><%= link_to 'Show', medication %></td>
+        <td><%= link_to 'Edit', edit_medication_path(medication) %></td>
+        <td><%= link_to 'Destroy', medication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medication', new_medication_path %>

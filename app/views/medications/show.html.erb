@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prescription:</strong>
+  <%= @medication.prescription %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @medication.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @medication.code %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @medication.dose %>
+</p>
+
+<p>
+  <strong>Dose unit:</strong>
+  <%= @medication.dose_unit %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @medication.frequency %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @medication.duration %>
+</p>
+
+<p>
+  <strong>Instruction:</strong>
+  <%= @medication.instruction %>
+</p>
+
+<p>
+  <strong>Prn:</strong>
+  <%= @medication.prn %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @medication.route %>
+</p>
+
+<p>
+  <strong>Form:</strong>
+  <%= @medication.form %>
+</p>
+
+<p>
+  <strong>Batchno:</strong>
+  <%= @medication.batchNo %>
+</p>
+
+<p>
+  <strong>Brand alternative:</strong>
+  <%= @medication.brand_alternative %>
+</p>
+
+<p>
+  <strong>Long term:</strong>
+  <%= @medication.long_term %>
+</p>
+
+<%= link_to 'Edit', edit_medication_path(@medication) %> |
+<%= link_to 'Back', medications_path %>

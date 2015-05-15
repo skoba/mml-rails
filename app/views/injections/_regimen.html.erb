@@ -1,0 +1,12 @@
+<div class="injection">
+  <% @injection.batch.sort.each do |batch, regimen| %>
+    Rp<%= batch %> <br />
+    <% regimen.each do |reg| %>
+      <%= reg.name %> <%= reg.dose %> <%= reg.dose_unit %>
+      <br />
+    <% end %>
+    ルート：<%= regimen[0].route %> <br />
+    指示：<%= regimen[0].instruction %> <br />
+    注射方法：<%= regimen[0].delivery_method %> <br />
+  <% end %>
+</div>

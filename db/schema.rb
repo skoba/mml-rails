@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513062432) do
+ActiveRecord::Schema.define(version: 20150515012110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150513062432) do
   end
 
   create_table "injections", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,6 +46,28 @@ ActiveRecord::Schema.define(version: 20150513062432) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "medications", force: :cascade do |t|
+    t.integer  "prescription_id"
+    t.string   "name"
+    t.string   "code"
+    t.decimal  "dose"
+    t.string   "dose_unit"
+    t.integer  "frequency"
+    t.date     "start_date"
+    t.integer  "duration"
+    t.string   "instruction"
+    t.boolean  "prn"
+    t.string   "route"
+    t.string   "form"
+    t.integer  "batchNo"
+    t.boolean  "brand_alternative"
+    t.boolean  "long_term"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "medications", ["prescription_id"], name: "index_medications_on_prescription_id", using: :btree
 
   create_table "mmlca", force: :cascade do |t|
     t.datetime "created_at"
@@ -85,9 +108,29 @@ ActiveRecord::Schema.define(version: 20150513062432) do
   end
 
   create_table "prescriptions", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "regimen", force: :cascade do |t|
+    t.integer  "injection_id"
+    t.string   "name"
+    t.string   "code"
+    t.decimal  "dose"
+    t.string   "dose_unit"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "instruction"
+    t.string   "route"
+    t.string   "site"
+    t.string   "delivery_method"
+    t.integer  "batch_no"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "regimen", ["injection_id"], name: "index_regimen_on_injection_id", using: :btree
 
   create_table "services", force: :cascade do |t|
     t.string   "type"
@@ -105,4 +148,6 @@ ActiveRecord::Schema.define(version: 20150513062432) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "medications", "prescriptions"
+  add_foreign_key "regimen", "injections"
 end

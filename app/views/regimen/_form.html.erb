@@ -1,0 +1,65 @@
+<%= form_for(@regiman) do |f| %>
+  <% if @regiman.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@regiman.errors.count, "error") %> prohibited this regiman from being saved:</h2>
+
+      <ul>
+      <% @regiman.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :injection_id %><br>
+    <%= f.text_field :injection_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :dose %><br>
+    <%= f.text_field :dose %>
+  </div>
+  <div class="field">
+    <%= f.label :dose_unit %><br>
+    <%= f.text_field :dose_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br>
+    <%= f.text_field :end %>
+  </div>
+  <div class="field">
+    <%= f.label :instruction %><br>
+    <%= f.text_field :instruction %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br>
+    <%= f.text_field :route %>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br>
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_method %><br>
+    <%= f.text_field :delivery_method %>
+  </div>
+  <div class="field">
+    <%= f.label :batch_no %><br>
+    <%= f.number_field :batch_no %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

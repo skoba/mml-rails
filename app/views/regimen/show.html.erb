@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Injection:</strong>
+  <%= @regiman.injection %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @regiman.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @regiman.code %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @regiman.dose %>
+</p>
+
+<p>
+  <strong>Dose unit:</strong>
+  <%= @regiman.dose_unit %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @regiman.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @regiman.end %>
+</p>
+
+<p>
+  <strong>Instruction:</strong>
+  <%= @regiman.instruction %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @regiman.route %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @regiman.site %>
+</p>
+
+<p>
+  <strong>Delivery method:</strong>
+  <%= @regiman.delivery_method %>
+</p>
+
+<p>
+  <strong>Batch no:</strong>
+  <%= @regiman.batch_no %>
+</p>
+
+<%= link_to 'Edit', edit_regiman_path(@regiman) %> |
+<%= link_to 'Back', regimen_path %>

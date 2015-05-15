@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Injection, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:injection) { create :injection }
+
+  it 'should be valid' do
+    expect(injection.regimen.size).to eq 3
+  end
 end
