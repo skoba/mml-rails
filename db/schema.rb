@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150513162430) do
   end
 
   create_table "injections", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
