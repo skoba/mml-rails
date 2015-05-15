@@ -1,0 +1,11 @@
+<div class="injection">
+  <% @injection.batch.sort.each do |batch, regimen| %>
+    Rp<%= batch %> <br />
+    <% regimen.each do |reg| %>
+      <%= reg.name %> <%= reg.dose %> <%= reg.dose_unit %>
+      <br />
+    <% end %>
+    <%= regimen[0].instruction %> <br />
+    <%= regimen[0].delivery_method %> <br />
+  <% end %>
+</div>

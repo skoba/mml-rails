@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513162430) do
+ActiveRecord::Schema.define(version: 20150515012110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,25 @@ ActiveRecord::Schema.define(version: 20150513162430) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "regimen", force: :cascade do |t|
+    t.integer  "injection_id"
+    t.string   "name"
+    t.string   "code"
+    t.decimal  "dose"
+    t.string   "dose_unit"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "instruction"
+    t.string   "route"
+    t.string   "site"
+    t.string   "delivery_method"
+    t.integer  "batch_no"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "regimen", ["injection_id"], name: "index_regimen_on_injection_id", using: :btree
+
   create_table "services", force: :cascade do |t|
     t.string   "type"
     t.datetime "action_datetime"
@@ -130,4 +149,5 @@ ActiveRecord::Schema.define(version: 20150513162430) do
   end
 
   add_foreign_key "medications", "prescriptions"
+  add_foreign_key "regimen", "injections"
 end

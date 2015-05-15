@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'factory_girl'
 FactoryGirl.create :prescription
+FactoryGirl.create :injection
 
