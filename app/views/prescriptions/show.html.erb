@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
 <%= render "medications" %>
 
-<%= link_to 'XML', prescription_path(@prescription, format: :xml) %>|<%= link_to 'Back', prescriptions_path %>
+<%= link_to 'XML', prescription_path(@prescription, format: :xml) %>|<%= link_to 'JSON', prescription_path(@prescription, format: :json) %>|<%= link_to 'Back', prescriptions_path %>
