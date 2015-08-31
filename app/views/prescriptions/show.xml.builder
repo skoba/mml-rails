@@ -4,6 +4,7 @@ xml.mml('xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
         'xmlns:mml' => "http://www.medxml.org/v4",
         'xmlns:mmlPs' => "http://www.medxml.org/v4/PrescriptionModule") do
   xml.mmlPs:PrescriptionModule do
+    xml.tag! 'mmlPs:issuedTo', 'external'
     @prescription.medications.sort.each do |medication|
       xml.mmlPs:medication do
         xml.mmlPs:medicine do
